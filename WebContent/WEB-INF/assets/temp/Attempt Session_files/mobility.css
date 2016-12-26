@@ -1,0 +1,210 @@
+
+@font-face {
+    font-family: "ProximaNova-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../fonts/mobility_fonts/regular/proximanova-reg-webfont.eot?#iefix") format("embedded-opentype"), 
+        url("../../fonts/mobility_fonts/regular/proximanova-reg-webfont.woff") format("woff"), 
+        url("../../fonts/mobility_fonts/regular/ProximaNova-Reg.ttf") format("truetype");
+}
+@font-face {
+    font-family: "ProximaNova-Light";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../fonts/mobility_fonts/light/proximanova-light-webfont.eot?#iefix") format("embedded-opentype"), 
+        url("../../fonts/mobility_fonts/light/proximanova-light-webfont.woff") format("woff"),
+        url("../../fonts/mobility_fonts/light/ProximaNova-Light.ttf") format("truetype");
+}
+@font-face {
+    font-family: "ProximaNova-Bold";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../fonts/mobility_fonts/bold/proximanova-bold-webfont.eot?#iefix") format("embedded-opentype"), 
+        url("../../fonts/mobility_fonts/bold/proximanova-bold-webfont.woff") format("woff"),
+        url("../../fonts/mobility_fonts/bold/ProximaNova-Bold.ttf") format("truetype");
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400
+}
+/*.nav > li > a {
+    color: #fff;
+    display: block;
+    font-family: ProximaNova-Regular;
+    font-size: 1.1em;
+    height: 30px;
+    letter-spacing: 0.008em;
+    margin-left: 0;
+    padding: 0
+}*/
+.mobility-nav {
+    background: -moz-linear-gradient(top, rgba(33, 119, 152, 1) 0%, rgba(32, 121, 155, 1) 2%, rgba(38, 128, 163, 1) 19%, rgba(36, 130, 164, 1) 22%, rgba(45, 143, 180, 1) 39%, rgba(47, 147, 183, 1) 46%, rgba(47, 147, 183, 1) 49%, rgba(43, 141, 176, 1) 59%, rgba(37, 130, 164, 1) 73%, rgba(34, 123, 157, 1) 88%, rgba(32, 123, 154, 1) 90%, rgba(34, 120, 155, 1) 93%, rgba(33, 119, 152, 1) 95%, rgba(255, 255, 255, 0) 97%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(33, 119, 152, 1)), color-stop(2%, rgba(32, 121, 155, 1)), color-stop(19%, rgba(38, 128, 163, 1)), color-stop(22%, rgba(36, 130, 164, 1)), color-stop(39%, rgba(45, 143, 180, 1)), color-stop(46%, rgba(47, 147, 183, 1)), color-stop(49%, rgba(47, 147, 183, 1)), color-stop(59%, rgba(43, 141, 176, 1)), color-stop(73%, rgba(37, 130, 164, 1)), color-stop(88%, rgba(34, 123, 157, 1)), color-stop(90%, rgba(32, 123, 154, 1)), color-stop(93%, rgba(34, 120, 155, 1)), color-stop(95%, rgba(33, 119, 152, 1)), color-stop(97%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(top, rgba(33, 119, 152, 1) 0%, rgba(32, 121, 155, 1) 2%, rgba(38, 128, 163, 1) 19%, rgba(36, 130, 164, 1) 22%, rgba(45, 143, 180, 1) 39%, rgba(47, 147, 183, 1) 46%, rgba(47, 147, 183, 1) 49%, rgba(43, 141, 176, 1) 59%, rgba(37, 130, 164, 1) 73%, rgba(34, 123, 157, 1) 88%, rgba(32, 123, 154, 1) 90%, rgba(34, 120, 155, 1) 93%, rgba(33, 119, 152, 1) 95%, rgba(255, 255, 255, 0) 97%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(top, rgba(33, 119, 152, 1) 0%, rgba(32, 121, 155, 1) 2%, rgba(38, 128, 163, 1) 19%, rgba(36, 130, 164, 1) 22%, rgba(45, 143, 180, 1) 39%, rgba(47, 147, 183, 1) 46%, rgba(47, 147, 183, 1) 49%, rgba(43, 141, 176, 1) 59%, rgba(37, 130, 164, 1) 73%, rgba(34, 123, 157, 1) 88%, rgba(32, 123, 154, 1) 90%, rgba(34, 120, 155, 1) 93%, rgba(33, 119, 152, 1) 95%, rgba(255, 255, 255, 0) 97%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(top, rgba(33, 119, 152, 1) 0%, rgba(32, 121, 155, 1) 2%, rgba(38, 128, 163, 1) 19%, rgba(36, 130, 164, 1) 22%, rgba(45, 143, 180, 1) 39%, rgba(47, 147, 183, 1) 46%, rgba(47, 147, 183, 1) 49%, rgba(43, 141, 176, 1) 59%, rgba(37, 130, 164, 1) 73%, rgba(34, 123, 157, 1) 88%, rgba(32, 123, 154, 1) 90%, rgba(34, 120, 155, 1) 93%, rgba(33, 119, 152, 1) 95%, rgba(255, 255, 255, 0) 97%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgba(33, 119, 152, 1) 0%, rgba(32, 121, 155, 1) 2%, rgba(38, 128, 163, 1) 19%, rgba(36, 130, 164, 1) 22%, rgba(45, 143, 180, 1) 39%, rgba(47, 147, 183, 1) 46%, rgba(47, 147, 183, 1) 49%, rgba(43, 141, 176, 1) 59%, rgba(37, 130, 164, 1) 73%, rgba(34, 123, 157, 1) 88%, rgba(32, 123, 154, 1) 90%, rgba(34, 120, 155, 1) 93%, rgba(33, 119, 152, 1) 95%, rgba(255, 255, 255, 0) 97%, rgba(255, 255, 255, 0) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#217798', endColorstr='#00ffffff', GradientType=0)
+   
+
+ 
+}
+
+
+.sec-heading,
+.sec-three-p,
+.sec-three-sub,
+.sec-three-sub-p,
+.sec-main-blue-p{
+    color: #00728f;
+}
+.sec-heading {
+    font-family: ProximaNova-Bold;
+    font-size: 25px !important;
+    margin-bottom: 0.85em;
+}
+.sec-main-p,
+.sec-top-main-p,
+.sec-main-blue-p,
+.sec-four-p {
+    font-family: proximanova-light !important;
+    font-size: 22.4px !important;
+    width: 97%;
+    font-size: 16px !important;
+    font-weight: 400;
+    
+}
+.sec-top-main-p{
+    color:#fff;
+}
+.sec-main-p{
+    color:#000000;
+}
+.sec-four-p {
+    color: #fff
+}
+.sec-two-sub,
+.sec-three-sub {
+    font-size: 19.2px !important;
+    font-family: ProximaNova-Bold
+}
+.sec-two-sub-p {
+    color: #000000
+}
+.sec-two-sub-p,
+.sec-three-sub-p,
+.sec-four-sub-p {
+    font-size: 16px !important;
+    font-family: ProximaNova-Regular;
+    font-weight: 500;
+    line-height: 20px;
+    width: 259px
+}
+.sec-four-sub {
+    color: #fff;
+    font-size: 19.2px !important;
+    font-family: ProximaNova-Bold
+}
+.sec-four-sub-p {
+    color: #fff
+}
+.mobi-row {
+    width: 100%
+}
+.scrollnav,.scrollnav-mycourse {
+    font-size: 1.1em;
+    padding-left:30px;
+/*    padding-bottom: -5px;
+    height:45px;*/
+    
+}
+.img-pos {
+    margin-left: -28px
+}
+.btn-lg {
+    text-decoration: none !important
+}
+
+.sub-link-1 > a{
+    color:#333333 !important;
+}
+
+.sub-link-2 > a{
+    color:#00728f !important;
+}
+
+.sub-link-3 > a{
+    color:#fff !important;
+}
+
+.pdf-name{
+    font-size:22.6px;
+    font-weight: 500;
+    font-family: ProximaNova-Regular;
+    color:#fff;
+}
+
+#my_courses > h2.panel-heading{
+    font-size:25px !important;
+    font-family:ProximaNova-Bold !important;
+    margin-left:30px !important;
+    color:#00728f !important;
+    background:#fff !important;
+}
+
+.sec-two-sub-p{
+    margin-left:-86px;
+}
+
+.mobi-bar{
+height:100px !important;
+}
+.myLearningStatus{
+    margin-top:2px;
+    margin-left:5px;
+	height:32px;
+	width:32px;
+	border-radius:20px;
+	content:"";
+	background:#28ABE3;
+}
+
+
+
+#myLearningBar > span.on{
+width:3px;
+	content:"";
+	background:#fff;
+	display:inline-block; 
+	margin-left:-3px;
+}
+
+#myLearningBar > span.off{
+width:3px;
+	content:"";
+	background:rgba(255,255,255,0.3);
+	display:inline-block; 
+	margin-left:-3px;
+}
+
+.myLearningBar{
+	position:relative;
+	left:9px;
+	top:7px;
+}
+
+.b-1,
+.b-2,
+.b-3,
+.b-4,
+.b-5{
+    position:absloute;
+    top:15px;
+}

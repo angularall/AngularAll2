@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+var a=angular.module("first",[]);
+a.config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    }
+]);
+a.controller("firstCtrl",['$scope','$http',function($scope,ht){
+$scope.firstName="tamil";
+$scope.callme=function(){
+ ht.get("http://localhost:8080/AngularAll/htmlservlet/aalogo.png").then(success).catch(fail);
+function success(data){
+console.log(data.data);
+alert('aa');
+document.getElementById('aa').innerHTML=data.data;
+}
+function fail(){
+console.log(data.data);
+}
+}
+}]);
+</script>
+<body>
+
+<div ng-app="first" ng-controller="firstCtrl">
+ 
+<p>Input something in the input box:</p>
+<p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>
+<h1>Hello {{name}}+{{firstName}}</h1>
+<a ng-click="callme()">callme</a>
+<div id="aa">dsf</div>
+</div>
+
+</body>
+</html>
+

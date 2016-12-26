@@ -1,0 +1,50 @@
+<html ng-app="aaApp">
+<head>
+<title>AngularAll</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../js/lib/angular_156_min.js"></script>
+<script src="../js/lib/angular-ui-router-min.js"></script>
+<script src="../js/common/app.js"></script>
+<script src="../js/common/appRouter.js"></script>
+<script src="../js/common/appService.js"></script>
+<script src="../js/controller/mainController.js"></script>
+<link rel="stylesheet" href="../css/main.css"/>
+<link rel="stylesheet" href="../css/bootstrap.css"/>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" ui-sref="home">AngularAll</a>
+      <img src="../images/aalogo.png" class="al-logo-img"/>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ng-class="{active: $state.includes('home')}"><a ui-sref="home">Angular</a></li>
+        <li class="dropdown" ui-sref-active="active" data-t="{{$state.includes('angular1')}}">
+          <a class="dropdown-toggle" data-toggle="dropdown"  ui-sref="angular1.main">Angular-1<span class="caret"></span></a>
+        </li>
+        <li ui-sref-active="active" ><a ui-sref="angular2.all">Angular-2</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span>Forum</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Post</a></li>
+      </ul>
+       <p ui-view="hint" class="navbar-text pull-right">Hint</p>
+    </div>
+  </div>
+</nav>
+    <!-- Here is the main ui-view (unnamed) and will be populated by its immediate children's templates
+         unless otherwise explicitly named views are targeted. It's also employing ng-animate. -->
+    <div ui-view="root" class="container slide core" style="padding-top: 80px;"></div>
+</body>
+<script type="text/javascript">
+	window.appContx="http://localhost:8080/AngularAll2/";
+</script>
+</html>
