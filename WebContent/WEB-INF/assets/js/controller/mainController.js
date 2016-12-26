@@ -33,6 +33,11 @@
 	function Angular1LmenuCtrl($scope,dataService){
 		$scope.comp=dataService.getA1Cmp();
 	}
+	/*angular.module('aaApp').controller('Angular1LmenuCtrl',A1CmpItemDetailTab);
+	A1CmpItemDetailTab.$inject=['$scope','dataService','$stateParams'];
+	function A1CmpItemDetailTab($scope,dataService,$stateParams){
+		$scope.menuList=dataService.getMenuTabs($stateParams.cname,$stateParams.iname,$stateParams.name);
+	}*/
 	function loadPageData(){
 		var pageData={};
 		pageData=[{'image':'one','id':'1','show':true},{'image':'two','id':'2','show':false},{'image':'three','id':'3','show':false},{'image':'four','id':'4','show':false}];
@@ -40,7 +45,7 @@
 	}
 	function loadNgDirectivies(){
 		var data=[];
-		data=['if','rpt','controller','click','init','bind','model','show','hide','keyup','app','change','class'];
+		data=['if','rpt','controller','click','init','bind','model','show','hide','keyup','app','change','class','bind1','model1','show1','hide1','keyup1','app1','change1','class1'];
 		return data;
 	}
 })();	

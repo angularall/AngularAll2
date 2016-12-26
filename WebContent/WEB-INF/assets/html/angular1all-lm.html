@@ -1,12 +1,10 @@
 <div class="">
       <div class="list-group">
-        <a class="list-group-item-heading" ui-sref="angular1.main">Angular1</a>
-        <a class="list-group-item-heading" ui-sref="angular1.main">-Components</a>
-        <a class="list-group-item" ng-repeat="c in comp" ui-sref-active="active" ui-sref="angular1.main.cmp({cname:c.f})">
-			{{c.n|uppercase}}
+        <a class="list-group-item-heading al-item-head" ui-sref="angular1.main"><b>Angular1 Components</b></a>
+        <a class="list-group-item al-a1lm-item" ng-repeat="c in comp" ui-sref-active="active" ui-sref="angular1.main.cmp({cname:c.f})">
+			{{c.n}}
         </a>
       </div>
       <hr>
-      <button class="btn" >Show More</button>
 </div>
 

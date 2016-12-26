@@ -105,24 +105,23 @@
 			views:{
 				"angitemdata":{
 					templateUrl:function($stateParams){
-						console.log('one');
-						console.log($stateParams);
-						return getTemplateUrl($stateParams.cname+$stateParams.iname);},
-					controller :function($state,$stateParams,$scope){
-						$state.go('angular1.main.cmp.itemDetail.tab',{'tname':'bsc'});
+						return getTemplateUrl('a1c-itemmenu');},
+						controller :function($state,$stateParams,$scope,dataService){
+						$scope.tabData=dataService.getTabDataList($stateParams.cname,$stateParams.iname);
+						var prefix=$stateParams.cname+$stateParams.iname;
+						$state.go('angular1.main.cmp.itemDetail.tab',{'tfName':prefix+'bsc'});
 					},
 				}
 			}
 		})
 		.state('angular1.main.cmp.itemDetail.tab',{
-			url:"/tab/:tname",
+			url:"/tab/:tfName",
 			views:{
 				"tabcontent":{
 					templateUrl:function($stateParams){
-						console.log('two');
-					console.log($stateParams);
-						return getTemplateUrl($stateParams.cname+$stateParams.iname+$stateParams.tname);},
-					//controller : 'angular1allctrl as a1alltrl',
+					console.log($stateParams.tfName);
+						return getTemplateUrl($stateParams.tfName);},
+					//controller : 'A1CmpItemDetailTab as a1citctrl',
 				}
 			}
 		});
