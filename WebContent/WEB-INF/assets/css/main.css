@@ -360,3 +360,7 @@ pre{
   opacity: 1;
 }
 
+.table-bordered {
+    border: 1px solid #ddd;
+    background: #ddf2ef;
+}

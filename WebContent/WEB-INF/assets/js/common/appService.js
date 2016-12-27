@@ -20,12 +20,14 @@ function(){
     		return comp; 
     	}
     	function getA1CmpDetail(){
-    		var data=[{'n':'Directive','fpre':'a1cd','items':[{'n':'if','f':'if'},{'n':'repeat','f':'rpt'},{'n':'class','f':'cls'},{'n':'show','f':'sh'},{'n':'hide','f':'hd'},{'n':'model','f':'mdl'},{'n':'hide','f':'hd'},{'n':'model','f':'mdl'},{'n':'hide','f':'hd'},{'n':'model','f':'mdl'},{'n':'hide','f':'hd'},{'n':'model','f':'mdl'},{'n':'hide','f':'hd'},{'n':'model','f':'mdl'},{'n':'hide','f':'hd'},{'n':'model','f':'mdl'},{'n':'hide','f':'hd'},{'n':'model','f':'mdl'},{'n':'hide','f':'hd'},{'n':'model','f':'mdl'},{'n':'hide','f':'hd'},{'n':'model','f':'mdl'}]}
-    		,{'n':'Filter','fpre':'a1cf','items':[{'n':'currency','f':'cr'},{'n':'date','f':'dt'},{'n':'filter','f':'flt'},{'n':'lowercase','f':'lc'},{'n':'uppercase','f':'uc'},{'n':'limitTo','f':'lt'}]}
-    		,{'n':'Angular Function','fpre':'a1cfu','items':[{'n':'angular.isDefined()','f':'isd'},{'n':'angular.fromJson()','f':'fj'},{'n':'angular.element()','f':'el'},{'n':'angular.element()','f':'el'},{'n':'angular.bind()','f':'bi'},{'n':'angular.equals()','f':'eq'},{'n':'angular.extend()','f':'ex'},{'n':'angular.forEach()','f':'fe'},{'n':'angular.isArray()','f':'isa'},{'n':'angular.isDate()','f':'isda'},{'n':'angular.isNumber()','f':'isn'},{'n':'angular.isFunction()','f':'isfu'},{'n':'angular.isObject()','f':'iso'},{'n':'angular.isString()','f':'isst'}]}
-    		
-    		];
-    		return data; 
+    		return $http.get(window.appContx+'a1_data.json')
+            .then(success)
+            .catch(failure);
+    		function success(response) { 
+    			return response.data;
+    		}
+    		function failure(error) { 
+    		}
     	}
     	function getTabDataList(cname,iname){
     		var data={};

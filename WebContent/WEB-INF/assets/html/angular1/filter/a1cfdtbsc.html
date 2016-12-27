@@ -1,0 +1,22 @@
+<h3>
+Angular filter<b>(|Date)</b>
+</h3>
+<p>
+Formats a (date/number) as a Date (i.e 1482853596873 to "Dec 27, 2016")</p> 
+<p>For example to display  the date of birth in html</p>
+<p>var DOB=new Date(); /* Date object */</p> 
+<p>var DOB="1482853596873"; /* time in milliseconds as string */</p>
+<p>var DOB=1482853596873; /* time in milliseconds as number */</p>  
+<xmp>
+<div>Date of Birth:{ {DOB|date}}</div>
+</xmp>
+ <h5>Output:</h5>
+ Date of Birth:Dec 27, 2016
+
+<h3>Usage</h3>
+<h4>JavaScript</h4>
+<p><pre><code><span class="pln">$filter</span><span class="pun">(</span><span class="str">'date'</span><span class="pun">)(</span><span class="pln">date</span><span class="pun">,</span><span class="pln"> format</span><span class="pun">,</span><span class="pln"> timezone</span><span class="pun">)</span></code></pre></p>
+<h4>Html</h4>
+<p><pre><code><span class="pun">{{</span><span class="pln"> date_expression </span><span class="pun">|</span><span class="pln"> date </span><span class="pun">:</span><span class="pln"> format </span><span class="pun">:</span><span class="pln"> timezone</span><span class="pun">}}</span></code></pre></p>
+
+

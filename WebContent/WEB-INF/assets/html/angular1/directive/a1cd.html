@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-sm-2 a1clm">
+      <div class="list-group">
+        <a class="list-group-item-heading al-item-head" ui-sref="angular1.main.cmp({cname:cmpData.componentFileName})" ><b>ng-Directives</b></b></a>
+        <a class="list-group-item a1-a1c-item" ng-repeat="item in cmpData.items" ui-sref-active="active" ui-sref="angular1.main.cmp.itemDetail({iname:item.itemFileName})">
+			ng-{{item.itemName}}
+        </a>
+      </div>
+      <hr>  
+  </div>
+  <div ui-view="angitemdata" class="col-sm-10 alcpct ang1view">
+  	<h4>Angular Directives</h4>
+  		<p>Directives extend HTML with custom attributes and elements with prefix ng- </p>
+  		The below are the most common directives needed for an AngularJS application.
+  		<ul>
+  		<li>ngApp	
+ 		The ngApp directive indicates the root element of the application and is mainly placed near the root element of the page - e.g. on the body or html tags.
+ 		</li>
+ 		<li>
+ 		ngBind	
+		The ngBind attribute binds the contents of model to a view.
+		Whenever the content changes, the view gets updated.
+		</li>
+		<li>
+		ngInit	
+		The ngInit directive allows you to evaluate an expression in the current scope.
+		</li>
+		<li>
+		ngModel	
+		The ngModel directive binds an input,select, textarea etc to an application property.
+		</li>
+		<li>
+		ngController	
+		The ngController directive attaches a controller class to the view.
+		</li>
+	</ul>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<h3>
+Angular filter<b>(|limitTo)</b>
+</h3>
+<p>Converts string to uppercase.</p> 
+<p>For example to display name in upper case in html</p>
+<p>var name="Sachin Tendulkar" /* name has some caps in value */</p>
+<xmp>
+<div>user name: { {name|uppercase}}</div>
+</xmp>
+ <h5>Output:</h5>
+ user name:SACHIN TENDULKAR
+<h3>Usage</h3>
+<h4>Html</h4>
+<p><pre><code><span class="pun">{{</span><span class="pln"> limitTo_expression </span><span class="pun">|</span><span class="pln"> limitTo </span><span class="pun">:</span><span class="pln"> limit </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">begin</span><span class="pun">}}</span></code></pre> </p>
+<h4>JavaScript</h4>
+<p><pre><code><span class="pln">$filter</span><span class="pun">(</span><span class="str">'limitTo'</span><span class="pun">)(</span><span class="pln">input</span><span class="pun">,</span><span class="pln"> limit</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">begin</span><span class="pun">)</span></code></pre></p>
+
+

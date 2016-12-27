@@ -37,9 +37,26 @@ private static final String SUFFIX = ".js";
      String fileName=urlSplit[urlSplit.length-1];
      String fileType=fileName.split("\\.")[1];
      String filePath;
-     if(fileType.equalsIgnoreCase("html")||fileType.equalsIgnoreCase("css")){
-    	 	filePath="/WEB-INF/assets/"+fileType+"/"+fileName;
-     }else if(fileType.equalsIgnoreCase("js")){
+     if(fileType.equalsIgnoreCase("html")){
+    	 	if(fileName.startsWith("a1")){
+	    	 	if(fileName.startsWith("a1cd")){
+	    	 		filePath="/WEB-INF/assets/"+fileType+"/angular1/directive/"+fileName;
+	    	 	}
+	    	 	else if(fileName.startsWith("a1cf")){
+	    	 		filePath="/WEB-INF/assets/"+fileType+"/angular1/filter/"+fileName;
+	    	 	}
+	    	 	else{
+	    	 		filePath="/WEB-INF/assets/"+fileType+"/angular1/core/"+fileName;
+	    	 	}
+    	 	}
+    	 	else{
+    	 		filePath="/WEB-INF/assets/"+fileType+"/common/"+fileName;
+    	 	}
+     }
+     else if(fileType.equalsIgnoreCase("css")){
+    	 filePath="/WEB-INF/assets/css/"+fileName;
+     }
+     else if(fileType.equalsIgnoreCase("js")){
     	 if(fileName.contains("app")){
     		 filePath="/WEB-INF/assets/js/common/"+fileName;
     	 }
@@ -48,6 +65,9 @@ private static final String SUFFIX = ".js";
     	 }else{
     		 filePath="/WEB-INF/assets/js/lib/"+fileName;
     	 }
+     }
+     else if(fileType.equalsIgnoreCase("json")){
+    	 filePath="/WEB-INF/assets/json/"+fileName;
      }
      else{
     	 filePath="/WEB-INF/assets/"+"image"+"/"+fileName;

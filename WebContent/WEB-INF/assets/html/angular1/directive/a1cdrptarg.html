@@ -1,0 +1,65 @@
+<h3>ng-repeat Arguments</h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>
+        ngRepeat        
+      </td>
+      <td>
+        repeat_expression
+      </td>
+      <td>
+        <p>The expression indicating how to enumerate a collection. These
+  formats are currently supported:</p>
+<ul>
+<li><p><code><span class="pln">variable </span><span class="kwd">in</span><span class="pln"> expression</span></code> – where variable is the user defined loop variable and <code><span class="pln">expression</span></code>
+is a scope expression giving the collection to enumerate.</p>
+<p>For example: <code><span class="pln">album </span><span class="kwd">in</span><span class="pln"> artist</span><span class="pun">.</span><span class="pln">albums</span></code>.</p>
+</li>
+<li><p><code><span class="pun">(</span><span class="pln">key</span><span class="pun">,</span><span class="pln"> value</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">in</span><span class="pln"> expression</span></code> – where <code><span class="pln">key</span></code> and <code><span class="pln">value</span></code> can be any user defined identifiers,
+and <code><span class="pln">expression</span></code> is the scope expression giving the collection to enumerate.</p>
+<p>For example: <code><span class="pun">(</span><span class="pln">name</span><span class="pun">,</span><span class="pln"> age</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">in</span><span class="pln"> </span><span class="pun">{</span><span class="str">'adam'</span><span class="pun">:</span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="str">'amalie'</span><span class="pun">:</span><span class="lit">12</span><span class="pun">}</span></code>.</p>
+</li>
+<li><p><code><span class="pln">variable </span><span class="kwd">in</span><span class="pln"> expression track </span><span class="kwd">by</span><span class="pln"> tracking_expression</span></code> – You can also provide an optional tracking expression
+which can be used to associate the objects in the collection with the DOM elements. If no tracking expression
+is specified, ng-repeat associates elements by identity. It is an error to have
+more than one tracking expression value resolve to the same key. (This would mean that two distinct objects are
+mapped to the same DOM element, which is not possible.)</p>
+<p>Note that the tracking expression must come last, after any filters, and the alias expression.</p>
+<p>For example: <code><span class="pln">item </span><span class="kwd">in</span><span class="pln"> items</span></code> is equivalent to <code><span class="pln">item </span><span class="kwd">in</span><span class="pln"> items track </span><span class="kwd">by</span><span class="pln"> $id</span><span class="pun">(</span><span class="pln">item</span><span class="pun">)</span></code>. This implies that the DOM elements
+will be associated by item identity in the array.</p>
+<p>For example: <code><span class="pln">item </span><span class="kwd">in</span><span class="pln"> items track </span><span class="kwd">by</span><span class="pln"> $id</span><span class="pun">(</span><span class="pln">item</span><span class="pun">)</span></code>. A built in <code><span class="pln">$id</span><span class="pun">()</span></code> function can be used to assign a unique
+<code><span class="pln">$$hashKey</span></code> property to each item in the array. This property is then used as a key to associated DOM elements
+with the corresponding item in the array by identity. Moving the same object in array would move the DOM
+element in the same way in the DOM.</p>
+<p>For example: <code><span class="pln">item </span><span class="kwd">in</span><span class="pln"> items track </span><span class="kwd">by</span><span class="pln"> item</span><span class="pun">.</span><span class="pln">id</span></code> is a typical pattern when the items come from the database. In this
+case the object identity does not matter. Two objects are considered equivalent as long as their <code><span class="pln">id</span></code>
+property is same.</p>
+<p>For example: <code><span class="pln">item </span><span class="kwd">in</span><span class="pln"> items </span><span class="pun">|</span><span class="pln"> filter</span><span class="pun">:</span><span class="pln">searchText track </span><span class="kwd">by</span><span class="pln"> item</span><span class="pun">.</span><span class="pln">id</span></code> is a pattern that might be used to apply a filter
+to items in conjunction with a tracking expression.</p>
+</li>
+<li><p><code><span class="pln">variable </span><span class="kwd">in</span><span class="pln"> expression </span><span class="kwd">as</span><span class="pln"> alias_expression</span></code> – You can also provide an optional alias expression which will then store the
+intermediate results of the repeater after the filters have been applied. Typically this is used to render a special message
+when a filter is active on the repeater, but the filtered result set is empty.</p>
+<p>For example: <code><span class="pln">item </span><span class="kwd">in</span><span class="pln"> items </span><span class="pun">|</span><span class="pln"> filter</span><span class="pun">:</span><span class="pln">x </span><span class="kwd">as</span><span class="pln"> results</span></code> will store the fragment of the repeated items as <code><span class="pln">results</span></code>, but only after
+the items have been processed through the filter.</p>
+<p>Please note that `as [variable name] is not an operator but rather a part of ngRepeat micro-syntax so it can be used only at the end
+(and not as operator, inside an expression).</p>
+<p>For example: <code><span class="pln">item </span><span class="kwd">in</span><span class="pln"> items </span><span class="pun">|</span><span class="pln"> filter </span><span class="pun">:</span><span class="pln"> x </span><span class="pun">|</span><span class="pln"> orderBy </span><span class="pun">:</span><span class="pln"> order </span><span class="pun">|</span><span class="pln"> limitTo </span><span class="pun">:</span><span class="pln"> limit </span><span class="kwd">as</span><span class="pln"> results</span></code> .</p>
+</li>
+</ul>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>

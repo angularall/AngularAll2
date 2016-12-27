@@ -1,8 +1,8 @@
 (function(){
 	'use strict';
 	angular.module('aaApp.ang1').controller('homeContentCtrl',homeContentCtrl);
-	homeContentCtrl.$inject=['$scope','$interval'];
-	function homeContentCtrl($scope,$interval){
+	homeContentCtrl.$inject=['$scope','$interval','dataService'];
+	function homeContentCtrl($scope,$interval,dataService){
 		$scope.appName="AngularALL";
 		$scope.$watch('showConModal',function(){
 			if($scope.showConModal){
@@ -13,7 +13,25 @@
 		for(var i=0;i<20;i++){
 				$scope.temp[i]=i;
 		}
+		$scope.a1Data=dataService.getA1CmpDetail();
 		$scope.alDirectives=loadNgDirectivies();
+		
+	}
+	angular.module('aaApp').controller('angular1cmpctrl',angular1cmpctrl);
+	angular1cmpctrl.$inject=['$scope','$stateParams','dataService'];
+	function angular1cmpctrl($scope,$stateParams,dataService){
+		$scope.cmpData;
+		loadData();
+		function loadData(){
+			dataService.getA1CmpDetail().then(function(data){
+				var a1Data=data["components"];
+				angular.forEach(a1Data,function(cmp,ck){
+					if(cmp.componentFileName==$stateParams.cname){
+						$scope.cmpData=cmp;
+					}
+				});
+			});
+		}
 		
 	}
 	angular.module('aaApp').controller('appHeaderCtrl',appHeaderCtrl);
@@ -22,10 +40,17 @@
 		
 		
 	}
+
 	angular.module('aaApp').controller('Angular1allctrl',Angular1allctrl);
 	Angular1allctrl.$inject=['$scope','dataService'];
 	function Angular1allctrl($scope,dataService){
 		$scope.cmpDetail=dataService.getA1CmpDetail();
+		loadData();
+		function loadData(){
+			dataService.getA1CmpDetail().then(function(data){
+				$scope.cmpDetail=data["components"];
+			});
+		}
 	}
 
 	angular.module('aaApp').controller('Angular1LmenuCtrl',Angular1LmenuCtrl);

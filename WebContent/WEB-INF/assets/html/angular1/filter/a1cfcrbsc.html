@@ -1,0 +1,22 @@
+<h3>
+Angular filter<b>(|currency)</b>
+</h3>
+<p>
+Formats a number as a currency (i.e 1000 to $1,000.00)<br> 
+When no currency symbol is provided, default symbol for current locale is used<br></p>
+<p>For example to display account balance with currency format</p>
+<p>var AccountBalance=1000;
+<xmp>
+<div>Balance:{ {AccountBalance|currency}}</div>
+</xmp>
+ <h5>Output:</h5>
+ Balance:$1,000.00
+
+<h3>Usage</h3>
+<h4>In Javascript</h4>
+<p><pre><code><span class="pln">$filter</span><span class="pun">(</span><span class="str">'currency'</span><span class="pun">)(</span><span class="pln">amount</span><span class="pun">,</span><span class="pln"> symbol</span><span class="pun">,</span><span class="pln"> fractionSize</span><span class="pun">)</span></code></pre></p>
+<h4>In Html</h4>
+<p><pre><code><span class="pun">{{</span><span class="pln"> currency_expression </span><span class="pun">|</span><span class="pln"> currency </span><span class="pun">:</span><span class="pln"> symbol </span><span class="pun">:</span><span class="pln"> fractionSize</span><span class="pun">}}</span></code></pre></p>
+
+
+

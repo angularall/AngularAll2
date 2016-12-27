@@ -71,7 +71,7 @@
 			    url:"/angular1",
 				views:{
 					"root":{
-						templateUrl:function(){return getTemplateUrl("angular1");},
+						templateUrl:function(){return getTemplateUrl("a1");},
 						controller : 'homeContentCtrl as hctrl',
 					}
 				}
@@ -80,27 +80,28 @@
 			url:"",
 			views:{
 				"alcontent":{
-					templateUrl:function(){return getTemplateUrl("angular1all");},
+					templateUrl:function(){return getTemplateUrl("a1core");},
 					controller : 'Angular1allctrl as a1alltrl',
 				},
 				"lmenu":{
-					templateUrl:function(){return getTemplateUrl("angular1all-lm");},
+					templateUrl:function(){return getTemplateUrl("a1-lm");},
 					controller:'Angular1LmenuCtrl as a1lmctrl',
 				}
 			}
 		})
 		.state('angular1.main.cmp',{
+			//angular1 component display like directive,filter,..
 			url:"/cmp/:cname",
 			views:{
 				"alcontent@angular1":{
 					templateUrl:function($stateParams){ 
-						//console.log($stateParams);
 						return getTemplateUrl($stateParams.cname);},
-					//controller : 'angular1allctrl as a1alltrl',
+					controller : 'angular1cmpctrl as a1cmptrl',
 				},
 			}
 		})
 		.state('angular1.main.cmp.itemDetail',{
+			//angular1 component display like directive,filter,..
 			url:"/detail/:iname",
 			views:{
 				"angitemdata":{
@@ -130,7 +131,7 @@
 	
 	
 	
-	
+	//
 	
 	
 	

@@ -1,0 +1,53 @@
+<h2>
+ng-repeat
+</h2>
+<p>
+The ngRepeat directive instantiates a template once per item from a collection. Each template instance gets its own scope, where the given loop variable is set to the current collection item, and $index is set to the item index or key. 
+</p>
+<p>Special properties are exposed on the local scope of each template instance, including:
+</p>
+<h2> Directive Info </h2>	
+<p>This directive creates new scope.</p>
+<p>This directive executes at priority level 1000.</p>
+<p>This directive can be used as multiElement</p>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><span class="pln">$index</span></code></td>
+<td><a href="" class="label type-hint type-hint-number">number</a></td>
+<td>iterator offset of the repeated element (0..length-1)</td>
+</tr>
+<tr>
+<td><code><span class="pln">$first</span></code></td>
+<td><a href="" class="label type-hint type-hint-boolean">boolean</a></td>
+<td>true if the repeated element is first in the iterator.</td>
+</tr>
+<tr>
+<td><code><span class="pln">$middle</span></code></td>
+<td><a href="" class="label type-hint type-hint-boolean">boolean</a></td>
+<td>true if the repeated element is between the first and last in the iterator.</td>
+</tr>
+<tr>
+<td><code><span class="pln">$last</span></code></td>
+<td><a href="" class="label type-hint type-hint-boolean">boolean</a></td>
+<td>true if the repeated element is last in the iterator.</td>
+</tr>
+<tr>
+<td><code><span class="pln">$even</span></code></td>
+<td><a href="" class="label type-hint type-hint-boolean">boolean</a></td>
+<td>true if the iterator position <code><span class="pln">$index</span></code> is even (otherwise false).</td>
+</tr>
+<tr>
+<td><code><span class="pln">$odd</span></code></td>
+<td><a href="" class="label type-hint type-hint-boolean">boolean</a></td>
+<td>true if the iterator position <code><span class="pln">$index</span></code> is odd (otherwise false).</td>
+</tr>
+</tbody>
+</table>
