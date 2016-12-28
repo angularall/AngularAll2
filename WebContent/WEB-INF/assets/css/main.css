@@ -16,12 +16,13 @@
 }
 .al-head-path{
     text-align: center;
-    background: #2691ec;
+    background: #337ab7;
     color: #fff;
     top:60px;
     position:fixed;
     width:100%;
     z-index:1030;
+    height:25px
 }
 
 .al-head .mdl-layout__header-row {
