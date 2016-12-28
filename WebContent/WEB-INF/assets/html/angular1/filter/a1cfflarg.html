@@ -1,0 +1,142 @@
+<h3>Arguments <b>(|filter)</b></h3>
+<div class="well">
+<h4>Html</h4>
+<p><pre><code><span class="pun">{{</span><span class="pln"> filter_expression </span><span class="pun">|</span><span class="pln"> filter </span><span class="pun">:</span><span class="pln"> expression </span><span class="pun">:</span><span class="pln"> comparator </span><span class="pun">:</span><span class="pln"> anyPropertyKey</span><span class="pun">}}</span></code></pre></p>
+<h4>JavaScript</h4>
+<p><pre><code><span class="pln">$filter</span><span class="pun">(</span><span class="str">'filter'</span><span class="pun">)(</span><span class="pln">array</span><span class="pun">,</span><span class="pln"> expression</span><span class="pun">,</span><span class="pln"> comparator</span><span class="pun">,</span><span class="pln"> anyPropertyKey</span><span class="pun">)</span></code></pre></p>
+<h4>Arguments</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Data-Type</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>
+        array
+        
+        
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-array">Array</a>
+      </td>
+      <td>
+        <p>The source array.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        expression
+        
+        
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-string">string</a><a href="" class="label type-hint type-hint-object">Object</a><a href="" class="label type-hint type-hint-function">function()</a>
+      </td>
+      <td>
+        <p>The predicate to be used for selecting items from
+  <code><span class="pln">array</span></code>.</p>
+<p>  Can be one of:</p>
+<ul>
+<li><p><code><span class="kwd">string</span></code>: The string is used for matching against the contents of the <code><span class="pln">array</span></code>. All strings or
+objects with string properties in <code><span class="pln">array</span></code> that match this string will be returned. This also
+applies to nested object properties.
+The predicate can be negated by prefixing the string with <code><span class="pun">!</span></code>.</p>
+</li>
+<li><p><code><span class="typ">Object</span></code>: A pattern object can be used to filter specific properties on objects contained
+by <code><span class="pln">array</span></code>. For example <code><span class="pun">{</span><span class="pln">name</span><span class="pun">:</span><span class="str">"M"</span><span class="pun">,</span><span class="pln"> phone</span><span class="pun">:</span><span class="str">"1"</span><span class="pun">}</span></code> predicate will return an array of items
+which have property <code><span class="pln">name</span></code> containing "M" and property <code><span class="pln">phone</span></code> containing "1". A special
+property name (<code><span class="pln">$</span></code> by default) can be used (e.g. as in <code><span class="pun">{</span><span class="pln">$</span><span class="pun">:</span><span class="pln"> </span><span class="str">"text"</span><span class="pun">}</span></code>) to accept a match
+against any property of the object or its nested object properties. That's equivalent to the
+simple substring match with a <code><span class="kwd">string</span></code> as described above. The special property name can be
+overwritten, using the <code><span class="pln">anyPropertyKey</span></code> parameter.
+The predicate can be negated by prefixing the string with <code><span class="pun">!</span></code>.
+For example <code><span class="pun">{</span><span class="pln">name</span><span class="pun">:</span><span class="pln"> </span><span class="str">"!M"</span><span class="pun">}</span></code> predicate will return an array of items which have property <code><span class="pln">name</span></code>
+not containing "M".</p>
+<p>Note that a named property will match properties on the same level only, while the special
+<code><span class="pln">$</span></code> property will match properties on the same level or deeper. E.g. an array item like
+<code><span class="pun">{</span><span class="pln">name</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">first</span><span class="pun">:</span><span class="pln"> </span><span class="str">'John'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">last</span><span class="pun">:</span><span class="pln"> </span><span class="str">'Doe'</span><span class="pun">}}</span></code> will <strong>not</strong> be matched by <code><span class="pun">{</span><span class="pln">name</span><span class="pun">:</span><span class="pln"> </span><span class="str">'John'</span><span class="pun">}</span></code>, but
+<strong>will</strong> be matched by <code><span class="pun">{</span><span class="pln">$</span><span class="pun">:</span><span class="pln"> </span><span class="str">'John'</span><span class="pun">}</span></code>.</p>
+</li>
+<li><p><code><span class="kwd">function</span><span class="pun">(</span><span class="pln">value</span><span class="pun">,</span><span class="pln"> index</span><span class="pun">,</span><span class="pln"> array</span><span class="pun">)</span></code>: A predicate function can be used to write arbitrary filters.
+The function is called for each element of the array, with the element, its index, and
+the entire array itself as arguments.</p>
+<p>The final result is an array of those elements that the predicate returned true for.</p>
+</li>
+</ul>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        comparator
+        
+        <div><em>(optional)</em></div>
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-function">function(actual, expected)</a><a href="" class="label type-hint type-hint-true">true</a><a href="" class="label type-hint type-hint-false">false</a>
+      </td>
+      <td>
+        <p>Comparator which is used in
+    determining if the expected value (from the filter expression) and actual value (from
+    the object in the array) should be considered a match.</p>
+<p>  Can be one of:</p>
+<ul>
+<li><p><code><span class="kwd">function</span><span class="pun">(</span><span class="pln">actual</span><span class="pun">,</span><span class="pln"> expected</span><span class="pun">)</span></code>:
+The function will be given the object value and the predicate value to compare and
+should return true if both values should be considered equal.</p>
+</li>
+<li><p><code><span class="kwd">true</span></code>: A shorthand for <code><span class="kwd">function</span><span class="pun">(</span><span class="pln">actual</span><span class="pun">,</span><span class="pln"> expected</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> angular</span><span class="pun">.</span><span class="pln">equals</span><span class="pun">(</span><span class="pln">actual</span><span class="pun">,</span><span class="pln"> expected</span><span class="pun">)}</span></code>.
+This is essentially strict comparison of expected and actual.</p>
+</li>
+<li><p><code><span class="kwd">false</span></code>: A short hand for a function which will look for a substring match in a case
+insensitive way. Primitive values are converted to strings. Objects are not compared against
+primitives, unless they have a custom <code><span class="pln">toString</span></code> method (e.g. <code><span class="typ">Date</span></code> objects).</p>
+</li>
+</ul>
+<p>  Defaults to <code><span class="kwd">false</span></code>.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        anyPropertyKey
+        
+        <div><em>(optional)</em></div>
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-string">string</a>
+      </td>
+      <td>
+        <p>The special property name that matches against any property.
+    By default <code><span class="pln">$</span></code>.</p>
+
+        
+      </td>
+    </tr>
+    
+  <tr style="background:#eed1f5">
+      <td>
+        returns        
+      </td>
+      <td>
+       array
+      </td>
+      <td>subset of the filtered array.</td>
+    </tr>
+  </tbody>
+  
+      
+</table>
+</div>

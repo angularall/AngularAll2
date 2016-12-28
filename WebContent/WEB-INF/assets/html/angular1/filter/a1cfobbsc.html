@@ -1,0 +1,26 @@
+<h3>
+Angular filter<b>(|orderBy)</b>
+</h3>
+<p>Returns an array containing the items from the specified collection, ordered by a comparator function based on the values computed using the expression predicate</p> 
+ <p>For example to display country names in alphabetical order</p>
+ <p>var countryList=['USA','China','India','Japan','England','Canada']</p>
+<xmp>
+<ul>
+	<li ng-repeat="country in countryList|orderBy">
+		{ {country}}
+	</li>
+</ul>
+</xmp>
+ <h4>Output:</h4>
+ 	Canada<br>
+ 	China<br>
+ 	England<br>
+ 	India<br>
+ 	Japan<br>
+ 	USA
+<h3>Usage</h3>
+<h4>Html</h4>
+<p><pre><code><span class="pun">{{</span><span class="pln"> orderBy_expression </span><span class="pun">|</span><span class="pln"> orderBy </span><span class="pun">:</span><span class="pln"> expression </span><span class="pun">:</span><span class="pln"> reverse </span><span class="pun">:</span><span class="pln"> comparator</span><span class="pun">}}</span></code></pre></p>
+<h4>JavaScript</h4>
+<p><pre><code><span class="pln">$filter</span><span class="pun">(</span><span class="str">'orderBy'</span><span class="pun">)(</span><span class="pln">collection</span><span class="pun">,</span><span class="pln"> expression</span><span class="pun">,</span><span class="pln"> reverse</span><span class="pun">,</span><span class="pln"> comparator</span><span class="pun">)</span></code></pre></p>
+

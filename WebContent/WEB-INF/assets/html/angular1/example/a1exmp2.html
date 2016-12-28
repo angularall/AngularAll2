@@ -1,0 +1,29 @@
+<div class="a1example-cont">
+<div class="text-center"><h4>Example1:Hello World!</h4></div>
+<pre>
+<xmp>
+
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	</head>
+	<body>
+		<div ng-app="myApp" ng-init="myText='Hello World!'">
+			{{myText} }
+		</div>
+		<script>
+			angular.module('myApp', []);
+		</script>
+	</body>
+</html>
+
+</xmp>
+</pre>
+<h4>Quidance</h4>
+<ul class="list-group">
+  <li class="list-group-item al-a1lm-eitem">1.Create a html file then include the angular js lib file form CDN(content delivery network) or download and point from your directory</li>
+  <li class="list-group-item al-a1lm-eitem">2.Create angular module by calling angular.module function and specify first param as name in string and second param as [] empty array(will discuss the second param later)</li>
+  <li class="list-group-item al-a1lm-eitem">3.Specify the module area where the angular logic will execute i.e ng-app="myApp" in div </li>
+  <li class="list-group-item al-a1lm-eitem">4.Initialize some text in myText variable by using ng-init </li>
+</ul>
+</div>

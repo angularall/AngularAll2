@@ -28,25 +28,24 @@
 										templateUrl : function(){
 											return getTemplateUrl("homeContent");
 										},
-										//controller : 'homeContentCtrl',
-										//controllerAs : 'hcCtrl'
+										controller:'A1ExampleCtrl',
 									},
-									//"header":header,
 								},
 						})
 				.state(
-						'pickdate',
+						'home.a1example',
 						{
-							url : '/pickDate',
+							url : '/angularstarting/:name',
 							views:{
-								"content":{
-									templateUrl :function(){
-										return getTemplateUrl("pickdate");
+								"a1example":{
+									templateUrl :function($stateParams){
+										return getTemplateUrl($stateParams.name);
 									},
-									controller : 'artMDateController',
-									controllerAs : 'dateCtrl'
+									//controller : 'artMDateController',
 								},
-								"header":header,
+								"a1theme@home":{
+									template:" ",
+								}
 							}
 						});
 				

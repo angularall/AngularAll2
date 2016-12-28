@@ -1,0 +1,18 @@
+<h3>
+Angular filter<b>(|number)</b>
+</h3>
+<p>Formats a number as text.</p> 
+<p>If the input is null or undefined, it will just be returned. If the input is infinite (Infinity or -Infinity), the Infinity symbol '∞' or '-∞' is returned, respectively. If the input is not a number an empty string is returned</p>
+<p>For example to display a number value in comma separated text in html </p>
+<p>var amount=500840.2350 /* its a number,and output in comma separated text with fraction */</p>
+<xmp>
+<div>Account Balance: { {amount|number:2}}</div>
+</xmp>
+ <h4>Output:</h4>
+ Account Balance:5,00,840.23
+<h3>Usage</h3>
+<h4>Html</h4>
+<p><pre><code><span class="pun">{{</span><span class="pln"> number_expression </span><span class="pun">|</span><span class="pln"> number </span><span class="pun">:</span><span class="pln"> fractionSize</span><span class="pun">}}</span></code></pre></p>
+<h4>JavaScript</h4>
+<p><pre><code><span class="pln">$filter</span><span class="pun">(</span><span class="str">'number'</span><span class="pun">)(</span><span class="pln">number</span><span class="pun">,</span><span class="pln"> fractionSize</span><span class="pun">)</span></code></pre></p>
+

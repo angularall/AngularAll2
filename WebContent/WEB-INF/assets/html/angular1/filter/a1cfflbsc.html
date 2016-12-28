@@ -1,0 +1,23 @@
+<h3>
+Angular filter<b>(|filter)</b>
+</h3>
+<p>Selects a subset of items from array and returns it as a new array.</p> 
+<p>For example to display country name with has character 'i' </p>
+<p>var countryList=['USA','China','India','Japan','England','Canada']</p>
+<xmp>
+<ul>
+	<li ng-repeat="country in countryList|filter:'i'">
+		{ {country}}
+	</li>
+</ul>
+</xmp>
+ <h4>Output:</h4>
+ 	China<br>
+ 	India<br>
+<h3>Usage</h3>
+<h4>Html</h4>
+<p><pre><code><span class="pun">{{</span><span class="pln"> filter_expression </span><span class="pun">|</span><span class="pln"> filter </span><span class="pun">:</span><span class="pln"> expression </span><span class="pun">:</span><span class="pln"> comparator </span><span class="pun">:</span><span class="pln"> anyPropertyKey</span><span class="pun">}}</span></code></pre></p>
+<h4>JavaScript</h4>
+<p><pre><code><span class="pln">$filter</span><span class="pun">(</span><span class="str">'filter'</span><span class="pun">)(</span><span class="pln">array</span><span class="pun">,</span><span class="pln"> expression</span><span class="pun">,</span><span class="pln"> comparator</span><span class="pun">,</span><span class="pln"> anyPropertyKey</span><span class="pun">)</span></code></pre></p>
+
+

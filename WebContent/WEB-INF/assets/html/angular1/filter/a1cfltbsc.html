@@ -1,14 +1,29 @@
 <h3>
 Angular filter<b>(|limitTo)</b>
 </h3>
-<p>Converts string to uppercase.</p> 
-<p>For example to display name in upper case in html</p>
-<p>var name="Sachin Tendulkar" /* name has some caps in value */</p>
+<p>Creates a new array or string containing only a specified number of elements. The elements are taken from either the beginning or the end of the source array, string or number, as specified by the value and sign (positive or negative) of limit. Other array-like objects are also supported (e.g. array subclasses, NodeLists, jqLite/jQuery collections etc). If a number is used as input, it is converted to a string</p> 
+<p>For example to display first three letters of country name (i.e India to Ind)</p>
+<p>var countryName="India"</p>
 <xmp>
-<div>user name: { {name|uppercase}}</div>
+<div>Country: { {countryName|limitTo:3}}</div>
 </xmp>
  <h5>Output:</h5>
- user name:SACHIN TENDULKAR
+ Country:Ind
+ 
+ <hr>
+ <p>For example to display 2 elements in an any size of array</p>
+ <p>var countryList=['USA','China','India','Japan','England','Canada']</p>
+<xmp>
+<ul>
+	<li ng-repeat="country in countryList|limitTo:3">
+		{ {country}}
+	</li>
+</ul>
+</xmp>
+ <h5>Output:</h5>
+ 	USA<br>
+ 	China<br>
+ 	India
 <h3>Usage</h3>
 <h4>Html</h4>
 <p><pre><code><span class="pun">{{</span><span class="pln"> limitTo_expression </span><span class="pun">|</span><span class="pln"> limitTo </span><span class="pun">:</span><span class="pln"> limit </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">begin</span><span class="pun">}}</span></code></pre> </p>

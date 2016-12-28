@@ -17,6 +17,12 @@
 		$scope.alDirectives=loadNgDirectivies();
 		
 	}
+	angular.module('aaApp').controller('A1ExampleCtrl',A1ExampleCtrl);
+	A1ExampleCtrl.$inject=['$scope','dataService'];
+	function A1ExampleCtrl($scope,dataService){
+		$scope.a1Topics=loadA1Topics();
+	}
+
 	angular.module('aaApp').controller('angular1cmpctrl',angular1cmpctrl);
 	angular1cmpctrl.$inject=['$scope','$stateParams','dataService'];
 	function angular1cmpctrl($scope,$stateParams,dataService){
@@ -71,6 +77,11 @@
 	function loadNgDirectivies(){
 		var data=[];
 		data=['if','rpt','controller','click','init','bind','model','show','hide','keyup','app','change','class','bind1','model1','show1','hide1','keyup1','app1','change1','class1'];
+		return data;
+	}
+	function loadA1Topics(){
+		var data=[];
+		data=['module','model','bind','expression','controller','filter','directive','function']
 		return data;
 	}
 })();	

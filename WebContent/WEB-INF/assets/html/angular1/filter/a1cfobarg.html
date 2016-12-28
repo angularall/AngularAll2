@@ -1,0 +1,112 @@
+<h3>Arguments <b>(|orderBy)</b></h3>
+<div class="well">
+<h4>Html</h4>
+<p><pre><code><span class="pun">{{</span><span class="pln"> orderBy_expression </span><span class="pun">|</span><span class="pln"> orderBy </span><span class="pun">:</span><span class="pln"> expression </span><span class="pun">:</span><span class="pln"> reverse </span><span class="pun">:</span><span class="pln"> comparator</span><span class="pun">}}</span></code></pre></p>
+<h4>JavaScript</h4>
+<p><pre><code><span class="pln">$filter</span><span class="pun">(</span><span class="str">'orderBy'</span><span class="pun">)(</span><span class="pln">collection</span><span class="pun">,</span><span class="pln"> expression</span><span class="pun">,</span><span class="pln"> reverse</span><span class="pun">,</span><span class="pln"> comparator</span><span class="pun">)</span></code></pre></p>
+<h4>Arguments</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Data-Type</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>
+        collection
+        
+        
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-array">Array</a><a href="" class="label type-hint type-hint-arraylike">ArrayLike</a>
+      </td>
+      <td>
+        <p>The collection (array or array-like object) to sort.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        expression
+        
+        <div><em>(optional)</em></div>
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-function">function()</a><a href="" class="label type-hint type-hint-string">string</a><a href="" class="label type-hint type-hint-array">Array.&lt;(function()|string)&gt;</a>
+      </td>
+      <td>
+        <p>A predicate (or list of
+   predicates) to be used by the comparator to determine the order of elements.</p>
+<p>   Can be one of:</p>
+<ul>
+<li><code><span class="typ">Function</span></code>: A getter function. This function will be called with each item as argument and
+the return value will be used for sorting.</li>
+<li><code><span class="kwd">string</span></code>: An Angular expression. This expression will be evaluated against each item and the
+result will be used for sorting. For example, use <code><span class="str">'label'</span></code> to sort by a property called
+<code><span class="pln">label</span></code> or <code><span class="str">'label.substring(0, 3)'</span></code> to sort by the first 3 characters of the <code><span class="pln">label</span></code>
+property.<br>
+(The result of a constant expression is interpreted as a property name to be used for
+comparison. For example, use <code><span class="str">'"special name"'</span></code> (note the extra pair of quotes) to sort by a
+property called <code><span class="pln">special name</span></code>.)<br>
+An expression can be optionally prefixed with <code><span class="pun">+</span></code> or <code><span class="pun">-</span></code> to control the sorting direction,
+ascending or descending. For example, <code><span class="str">'+label'</span></code> or <code><span class="str">'-label'</span></code>. If no property is provided,
+(e.g. <code><span class="str">'+'</span></code> or <code><span class="str">'-'</span></code>), the collection element itself is used in comparisons.</li>
+<li><code><span class="typ">Array</span></code>: An array of function and/or string predicates. If a predicate cannot determine the
+relative order of two items, the next predicate is used as a tie-breaker.</li>
+</ul>
+<p><strong>Note:</strong> If the predicate is missing or empty then it defaults to <code><span class="str">'+'</span></code>.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        reverse
+        
+        <div><em>(optional)</em></div>
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-boolean">boolean</a>
+      </td>
+      <td>
+        <p>If <code><span class="kwd">true</span></code>, reverse the sorting order.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        comparator
+        
+        <div><em>(optional)</em></div>
+      </td>
+      <td>
+        <a href="" class="label type-hint type-hint-function">function()</a>
+      </td>
+      <td>
+        <p>The comparator function used to determine the relative order of
+   value pairs. If omitted, the built-in comparator will be used.</p>
+
+        
+      </td>
+    </tr>
+     <tr style="background:#eed1f5">
+      <td>
+        returns        
+      </td>
+      <td>
+       Array
+      </td>
+      <td>The sorted array</td>
+    </tr>
+  </tbody>
+</table>
+</div>

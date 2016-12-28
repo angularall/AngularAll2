@@ -14,6 +14,15 @@
   /*background-image: url(images/header-bg.jpg);*/
   background:#f5f5f5;
 }
+.al-head-path{
+    text-align: center;
+    background: #2691ec;
+    color: #fff;
+    top:60px;
+    position:fixed;
+    width:100%;
+    z-index:1030;
+}
 
 .al-head .mdl-layout__header-row {
   padding: 0;
@@ -305,6 +314,9 @@ pre{
 	border-right:none !important;
 	border-top:none !important;
 }
+.al-a1lm-eitem{
+	background:#e7f5cc;
+}
 .ang1lmenu{
 	border: 1px solid #c2c5ec;
 	height:80%;
@@ -363,4 +375,8 @@ pre{
 .table-bordered {
     border: 1px solid #ddd;
     background: #ddf2ef;
+}
+.a1example-cont{
+	padding-top:10px;
+	background:#fafafa;
 }

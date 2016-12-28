@@ -19,18 +19,36 @@
         input        
       </td>
       <td>
-       string
+       Array,ArrayLike,string,number
+       </td>
+      <td>Array/array-like, string or number</td>
+    </tr>
+    <tr>
+      <td>
+        limit        
       </td>
-      <td>string data</td>
+      <td>
+       string,number
+       </td>
+      <td>The length of the returned array or string. If the limit number is positive, limit number of items from the beginning of the source array/string are copied. If the number is negative, limit number of items from the end of the source array/string are copied. The limit will be trimmed if it exceeds array.length. If limit is undefined, the input will be returned unchanged</td>
+    </tr>
+    <tr>
+      <td>
+        begin(optional)        
+      </td>
+      <td>
+       string,number
+       </td>
+      <td>Index at which to begin limitation. As a negative index, begin indicates an offset from the end of input. Defaults to 0</td>
     </tr>
     <tr style="background:#eed1f5">
       <td>
         returns        
       </td>
       <td>
-       string
+       Array,string
       </td>
-      <td>string in upper case.</td>
+      <td>A new sub-array or substring of length limit or less if the input had less than limit elements.</td>
     </tr>
   </tbody>
 </table>

@@ -1,0 +1,17 @@
+<h3>
+Angular filter<b>(|json)</b>
+</h3>
+<p>Allows you to convert a JavaScript object into JSON string</p> 
+<p>For example to display entire object return from back end system like java and to see the data from that object</p>
+<p>var mobileObject={'mobileName':"Apple",'price':65000,'model':"6s"} /* Its javascript object has some properties and values */</p>
+<xmp>
+<div>Data is : { {mobileObject|json}}</div>
+</xmp>
+ <h4>Output:</h4>
+Data is : {"mobileName":"Apple","price":65000,"model":"6s"}
+<h3>Usage</h3>
+<h4>Html</h4>
+<p><pre><code><span class="pun">{{</span><span class="pln"> json_expression </span><span class="pun">|</span><span class="pln"> json </span><span class="pun">:</span><span class="pln"> spacing</span><span class="pun">}}</span></code></pre></p>
+<h4>JavaScript</h4>
+<p><pre><code><span class="pln">$filter</span><span class="pun">(</span><span class="str">'json'</span><span class="pun">)(</span><span class="kwd">object</span><span class="pun">,</span><span class="pln"> spacing</span><span class="pun">)</span></code></pre></p>
+
