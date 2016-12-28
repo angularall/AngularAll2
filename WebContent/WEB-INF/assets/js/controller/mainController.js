@@ -21,6 +21,7 @@
 	A1ExampleCtrl.$inject=['$scope','dataService'];
 	function A1ExampleCtrl($scope,dataService){
 		$scope.a1Topics=loadA1Topics();
+		$scope.e1TabList=['Example','Html','JavaScript','Result','Steps','Mistakes']
 	}
 
 	angular.module('aaApp').controller('angular1cmpctrl',angular1cmpctrl);
