@@ -3,7 +3,7 @@
 
 <ul class="nav nav-tabs">
   <li ui-sref-active="active" ui-sref="" ng-repeat="tab in e1TabList">
-  <a>{{tab}} </a>
+  <a><b>{{tab}}</b> </a>
   </li>
 </ul>
 <div class="tab-content"><div id="home" class="tab-pane fade in active" ui-view="tabcontent"></div>
@@ -13,15 +13,15 @@
 
 <html>
 	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-	</head>
-	<body>
-		<div ng-app="myApp" ng-init="myText='Hello World!'">
-			{{myText} }
-		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script> <!-- Step-1 -->
 		<script>
-			angular.module('myApp', []);
+			angular.module('myApp', []);<!--Step-2-->
 		</script>
+	</head>
+	<body ng-app="myApp"><!-- Step-3 -->
+		<div  ng-init="myText='Hello World!'"> <!-- Step-4 -->
+			{{myText} } <!-- Step-5 -->
+		</div>
 	</body>
 </html>
 
@@ -29,10 +29,16 @@
 </pre>
 <h4>Quidance</h4>
 <ul class="list-group">
-  <li class="list-group-item al-a1lm-eitem">1.Create a html file then include the angular js lib file form CDN(content delivery network) or download and point from your directory</li>
-  <li class="list-group-item al-a1lm-eitem">2.Create angular module by calling angular.module function and specify first param as name in string and second param as [] empty array(will discuss about the second param later)</li>
-  <li class="list-group-item al-a1lm-eitem">3.Specify the module area where the angular logic will execute i.e ng-app="myApp" in div </li>
-  <li class="list-group-item al-a1lm-eitem">4.Initialize some text in myText variable by using ng-init </li>
+  <li class="list-group-item al-a1lm-eitem"><b>1.Add angular js lib file(Mandatory)</b> form CDN(content delivery network) or download and point from your file directory</li>
+  <li class="list-group-item al-a1lm-eitem"><b>2.Define angular module(Optional)</b> in script tag by calling angule.module().Provide app name as first param in string and second param as empty array(will discuss about the second param later)</li>
+  <li class="list-group-item al-a1lm-eitem"><b>3.Define ng-app="myApp"(mandatory)</b> in body tag and it is the starting point for angular execution in html and inside this module area the angular code logic will run</li>
+  <li class="list-group-item al-a1lm-eitem"><b>4.Initialize myText(Optional)</b> variable with some text by using ng-init</li>
+  <li class="list-group-item al-a1lm-eitem"><b>5.Print variable { {myText}}</b> by using { { }} double curly braces</li>
+  <li class="list-group-item al-a1lm-eitem"><b>if no angular.module("myApp")</b>is written, then mention empty name in ng-app=" " in html(i.e ng-app with empty string for bootstrap/starting point)</li>
+  <li class="list-group-item al-a1lm-eitem"><b>angular.module("yourappname")</b>is used to assign module name for your application and this is needed for angular library to add dependent module in your app(check angular module for more info)</li>
+  <li class="list-group-item al-a1lm-eitem"><b>ng-init is a angular directive</b> used in angular to initialize model variables in html itself</li>
+  <li class="list-group-item al-a1lm-eitem"><b>Angular expression { { }}</b>is an angular expression used to print variable text in html</li>
+  <li class="list-group-item al-a1lm-eitem"><h3>ng-</h3>is the prefix for all angular directives in html(ex:ng-app,ng-init,..)</li>
 </ul>
 </div>
 </div>

@@ -316,7 +316,7 @@ pre{
 	border-top:none !important;
 }
 .al-a1lm-eitem{
-	background:#e7f5cc;
+	background:#e7f5cc !important;
 }
 .ang1lmenu{
 	border: 1px solid #c2c5ec;
@@ -380,4 +380,8 @@ pre{
 .a1example-cont{
 	padding-top:10px;
 	background:#fafafa;
+}
+
+.al-rh-add{
+	background:#e7f5cc !important;
 }

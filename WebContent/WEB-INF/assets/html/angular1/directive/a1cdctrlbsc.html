@@ -2,30 +2,25 @@
 ng-controller
 </h2>
 <p>
-The ngController directive attaches a controller class to the view. This is a key aspect of how angular supports the principles behind the Model-View-Controller design pattern.
+The ngController directive attaches a controller class to the view. 
+This is the very same behavior like Model-View-Controller design pattern.
 </p>
 <p>MVC components in angular:
-
+</p>
 <ul> 
- <li> Model — Models are the properties of a scope; scopes are attached to the DOM where scope properties are accessed through bindings.</li>
- <li> View — The template (HTML with data bindings) that is rendered into the View.</li>
- <li> Controller — The ngController directive specifies a Controller class; the class contains business logic behind the application to decorate the scope with functions and values</p></li>
+ <li> Model - Models are the properties of a scope; scopes are attached to the DOM where scope properties are accessed through bindings.</li>
+ <li> View - The template (HTML with data bindings) that is rendered into the View.</li>
+ <li> Controller - The ngController directive specifies a Controller class; the class contains business logic behind the application to decorate the scope with functions and values</li>
 </ul>
-<p>
 <h2> Directive Info </h2>
+<p>
 This directive creates new scope.
 This directive executes at priority level 500.
 </p>
-
-<h4>Example</h4>
-<div class="panel">
-<pre>
-<code class="language-html">
-<label>Click me: <input type="checkbox" ng-model="checked" ng-init="checked=true" /></label><br/>
-Show when checked:
-<span ng-if="checked" class="animate-if">
-  This is removed when the checkbox is unchecked.
-</span>
-</code>
-</pre>
+<h3>Usage</h3>
+<div class="well">
+<pre><code><span class="tag">&lt;ANY</span><span class="pln">
+  </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"expression"</span><span class="tag">&gt;</span><span class="pln">
+...
+</span><span class="tag">&lt;/ANY&gt;</span></code></pre>
 </div>

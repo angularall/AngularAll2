@@ -7,18 +7,12 @@ ng-model
 <p>
 This directive executes at priority level 1.
 </p>
-<h4>CSS Classes</h4>
-<ul>
-<li><code><span class="pln">ng</span><span class="pun">-</span><span class="pln">valid</span></code>: the model is valid</li>
-<li><code><span class="pln">ng</span><span class="pun">-</span><span class="pln">invalid</span></code>: the model is invalid</li>
-<li><code><span class="pln">ng</span><span class="pun">-</span><span class="pln">valid</span><span class="pun">-[</span><span class="pln">key</span><span class="pun">]</span></code>: for each valid key added by <code><span class="pln">$setValidity</span></code></li>
-<li><code><span class="pln">ng</span><span class="pun">-</span><span class="pln">invalid</span><span class="pun">-[</span><span class="pln">key</span><span class="pun">]</span></code>: for each invalid key added by <code><span class="pln">$setValidity</span></code></li>
-<li><code><span class="pln">ng</span><span class="pun">-</span><span class="pln">pristine</span></code>: the control hasn't been interacted with yet</li>
-<li><code><span class="pln">ng</span><span class="pun">-</span><span class="pln">dirty</span></code>: the control has been interacted with</li>
-<li><code><span class="pln">ng</span><span class="pun">-</span><span class="pln">touched</span></code>: the control has been blurred</li>
-<li><code><span class="pln">ng</span><span class="pun">-</span><span class="pln">untouched</span></code>: the control hasn't been blurred</li>
-<li><code><span class="pln">ng</span><span class="pun">-</span><span class="pln">pending</span></code>: any <code><span class="pln">$asyncValidators</span></code> are unfulfilled</li>
-<li><code><span class="pln">ng</span><span class="pun">-</span><span class="pln">empty</span></code>: the view does not contain a value or the value is deemed "empty", as defined
- by the NgModelController#$isEmpty"><code><span class="pln">ngModel</span><span class="pun">.</span><span class="typ">NgModelController</span></code></a> method</li>
-<li><code><span class="pln">ng</span><span class="pun">-</span><span class="kwd">not</span><span class="pun">-</span><span class="pln">empty</span></code>: the view contains a non-empty value</li>
-</ul> 
+<h3>Usage</h3>
+as attribute:
+<div class="well">
+
+<pre><code><span class="tag">&lt;ANY</span><span class="pln">
+  </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"expression"</span><span class="tag">&gt;</span><span class="pln">
+...
+</span><span class="tag">&lt;/ANY&gt;</span></code></pre>
+</div>

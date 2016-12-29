@@ -1,4 +1,4 @@
-<div ui-view="a1theme">
+<div ui-view="a1theme" class="hidden futureuse">
 <div class="text-center">
   <h3>Hello Angular!</h3>
   <h4>Happy to learn and HTMLaize by Angulaarrie !</h4> 
@@ -7,10 +7,10 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-2 ang1lmenu">
-      <h4>Start Angular with Simple Examples</h4><hr>
+      <h4>Start angular with simple examples</h4><hr>
       <div class="list-group">
       	<a class="list-group-item al-a1lm-item" ui-sref="home">About Angular</a>
-        <a class="list-group-item al-a1lm-item" ng-repeat="c in [1,2,3,4,5,6]" ui-sref="home.a1example({name:'a1exmp'+c})">
+        <a class="list-group-item al-a1lm-item" ng-repeat="c in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]" ui-sref="home.a1example({name:'a1exmp'+c})">
 			Example-{{c}}
         </a>
       </div>
@@ -19,9 +19,11 @@
     <div class="col-sm-7 ang1all"  style="background:#f8f8f8;">
     	<div style="height:40px;width:100%;border:1px solid #ddd" class="text-center">Ad-Space</div>
     	<div ui-view="a1example">
-        <div class="text-center"><h3>AngularJS</h3></div>
+        <div class="text-center"><h3>AngularJS</h3>
+        <h4>Hello Angular!</h4>
+  		<h5>Happy to learn and HTMLaize by Angulaarrie !</h5> 
+        </div>
 		<hr>
-		<br>
 		<p>AngularJS is a JavaScript framework. </p>
 		<p>Angular JS is an extended HTML for web apps.</p>
 		<p>Angular JS is especially for Single Page Application, which results in extraordinarily expressive, readable, and quick to develop.</p>
@@ -31,16 +33,16 @@
     	</div>
     </div>
     <div class="col-sm-2 ang1lmenu">
-      <h4>Core Angular Topics</h4> 
+      <h4>Fundamental angular concepts(Core)</h4> 
       <div class="list-group">
         <a class="list-group-item al-a1lm-item" ng-repeat="t in a1Topics" >
 			{{t}}
         </a>
       </div>
     </div>
-    <div class="col-sm-1 ang1lmenu">
+    <div class="col-sm-1 ang1lmenu al-rh-add">
       <h4>Ad-space</h4><hr>
-     	<p ng-repeat="a in [1,2,3,4,5,6]">add-space<hr></p>
+     	<p ng-repeat="a in [1,2,3,4,5,6]">Ad-space<hr></p>
       <hr>
     </div>
   </div>

@@ -4,6 +4,10 @@
    "componentName":"Directive",
    "componentFileName":"a1cd",
    "items":[  
+   	  {  
+         "itemName":"app",
+         "itemFileName":"app"
+      },
       {  
          "itemName":"if",
          "itemFileName":"if"
@@ -43,7 +47,56 @@
       {  
          "itemName":"hide",
          "itemFileName":"hd"
-      }]
+      },
+      {  
+         "itemName":"keydown",
+         "itemFileName":"kd"
+      },
+      {  
+         "itemName":"keypress",
+         "itemFileName":"kp"
+      },
+      {  
+         "itemName":"keyup",
+         "itemFileName":"ku"
+      },
+      {  
+         "itemName":"form",
+         "itemFileName":"fm"
+      },
+      {  
+         "itemName":"maxlength",
+         "itemFileName":"maxl"
+      },
+      {  
+         "itemName":"minlength",
+         "itemFileName":"minl"
+      },
+      {  
+         "itemName":"mousedown",
+         "itemFileName":"mdown"
+      },
+      {  
+         "itemName":"mouseenter",
+         "itemFileName":"menter"
+      },
+      {  
+         "itemName":"mouseleave",
+         "itemFileName":"mleave"
+      },
+      {  
+         "itemName":"mousemove",
+         "itemFileName":"mmove"
+      },
+      {  
+         "itemName":"mouseover",
+         "itemFileName":"mover"
+      },
+      {  
+         "itemName":"mouseup",
+         "itemFileName":"mup"
+      }
+      ]
 },
 {  
    "componentName":"Filter",

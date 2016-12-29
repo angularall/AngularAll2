@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-sm-2 a1clm">
       <div class="list-group">
-        <a class="list-group-item-heading al-item-head" ui-sref="angular1.main.cmp({cname:cmpData.componentFileName})" ><b>ng-Directives</b></b></a>
+        <a class="list-group-item-heading al-item-head" ui-sref="angular1.main.cmp({cname:cmpData.componentFileName})" ><b>ng-Directives</b></a>
         <a class="list-group-item a1-a1c-item" ng-repeat="item in cmpData.items" ui-sref-active="active" ui-sref="angular1.main.cmp.itemDetail({iname:item.itemFileName})">
 			ng-{{item.itemName}}
         </a>

@@ -1,29 +1,47 @@
 <div class="a1example-cont">
-<div class="text-center"><h4>Example1:Hello World!</h4></div>
+<div class="text-center"><h4>Example-3: Prints fullName dynamically by using angular controller directive(usage of <b>ng-controller and $scope</b>)</h4></div>
+
+<ul class="nav nav-tabs">
+  <li ui-sref-active="active" ui-sref="" ng-repeat="tab in e1TabList">
+  <a><b>{{tab}}</b></a>
+  </li>
+</ul>
+<div class="tab-content"><div id="home" class="tab-pane fade in active" ui-view="tabcontent"></div>
+
 <pre>
 <xmp>
-
 <html>
 	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-	</head>
-	<body>
-		<div ng-app="myApp" ng-init="myText='Hello World!'">
-			{{myText} }
-		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script> <!-- Step-1 -->
 		<script>
-			angular.module('myApp', []);
+			//define module
+			angular.module('myApp', []); <!--Step-2 -->
+			//define controller <!-- Step-3 -->
+			angular.module('myApp').controller('firstController',function($scope){
+				$scope.firstName="Albert";
+				$scope.secondName="Einstein";
+			});
 		</script>
+	</head>
+	<body ng-app="myApp"><!-- Step-4 -->
+		<div  ng-controller="firstController"> <!-- Step-5 -->
+			<p>FirstName:<input type="text" ng-model="firstName"/></p>
+			<p>SeconddName:<input type="text" ng-model="secondName"/></p>
+			FullName={ {firstName+" "+secondName}} !
+		</div>
 	</body>
 </html>
 
 </xmp>
 </pre>
 <h4>Quidance</h4>
+New concepts are below: goto <a>All Steps</a> for complete info  
 <ul class="list-group">
-  <li class="list-group-item al-a1lm-eitem">1.Create a html file then include the angular js lib file form CDN(content delivery network) or download and point from your directory</li>
-  <li class="list-group-item al-a1lm-eitem">2.Create angular module by calling angular.module function and specify first param as name in string and second param as [] empty array(will discuss the second param later)</li>
-  <li class="list-group-item al-a1lm-eitem">3.Specify the module area where the angular logic will execute i.e ng-app="myApp" in div </li>
-  <li class="list-group-item al-a1lm-eitem">4.Initialize some text in myText variable by using ng-init </li>
+  <li class="list-group-item al-a1lm-eitem"><b>3.Define angular controller</b> by calling angular.module("moduleName").controller() function</li>
+  <li class="list-group-item al-a1lm-eitem"><b>5.Declare ng-controller</b> in html tag for controller functioning area</li>
+  <li class="list-group-item al-a1lm-eitem"><b>$scope module</b> is provided by angular for all controller functions and it holds all properties of a controller</li>
+  <li class="list-group-item al-a1lm-eitem"><b>controller models/properties in Script</b>(firstName,lastName) are accessed by using $scope ($scope.firstName)</li>
+  <li class="list-group-item al-a1lm-eitem"><b>controller models/properties in Html</b>(firstName,lastName) are accessed by using just name(ng-model="firstName") within angular directive(ng-model,ng-init,etc) and expression { {firstName}}</li>
 </ul>
+</div>
 </div>

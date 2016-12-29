@@ -1,4 +1,4 @@
-<h3>ng-controller Arguments</h3>
+<h3>ng-class Arguments</h3>
 <div class="well">
 <table class="table table-bordered">
   <thead>
@@ -12,21 +12,13 @@
     
     <tr>
       <td>
-        ngController        
+        ngClass        
       </td>
       <td>
         expression 
       </td>
       <td>
-        <p>Name of a constructor function registered with the current $controllerProvider or an expression that on the current scope evaluates to a constructor function.
-
-The controller instance can be published into a scope property by specifying ng-controller="as propertyName".
-
-If the current $controllerProvider is configured to use globals (via $controllerProvider.allowGlobals()), this may also be the name of a globally accessible constructor function (deprecated, not recommended).
-
-        </p>
-
-        
+        <p>Expression to eval. The result of the evaluation can be a string representing space delimited class names, an array, or a map of class names to boolean values. In the case of a map, the names of the properties whose values are truthy will be added as css classes to the element. </p>
       </td>
     </tr>
     

@@ -8,17 +8,21 @@ Whenever the content changes, the view gets updated.</p>
 <p>
 This directive executes at priority level 0.
 </p>
-<p>Typically, you don't use ngBind directly, but instead you use the double curly markup like {{ expression }} which is similar but less verbose.</p>
 
-<h4>Example</h4>
-<div class="panel">
-<pre>
-<code class="language-html">
-<label>Click me: <input type="checkbox" ng-model="checked" ng-init="checked=true" /></label><br/>
-Show when checked:
-<span ng-if="checked" class="animate-if">
-  This is removed when the checkbox is unchecked.
-</span>
-</code>
-</pre>
+<h3>Usage</h3>
+as attribute:
+<div class="well">
+
+<pre><code><span class="tag">&lt;ANY</span><span class="pln">
+  </span><span class="atn">ng-bind</span><span class="pun">=</span><span class="atv">"expression"</span><span class="tag">&gt;</span><span class="pln">
+...
+</span><span class="tag">&lt;/ANY&gt;</span></code></pre>
 </div>
+as css:
+<div class="well">
+
+<pre><code><span class="tag">&lt;ANY</span><span class="pln">
+  </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"ng-bind:expression;"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/ANY&gt;</span></code></pre>
+</div>
+
+
