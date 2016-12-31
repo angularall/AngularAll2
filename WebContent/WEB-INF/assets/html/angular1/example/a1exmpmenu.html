@@ -1,0 +1,14 @@
+<div class="a1example-cont">
+	<ul class="nav nav-tabs">
+	  <li ui-sref-active="active" ui-sref="home.a1example.tab({tname:tab})" ng-repeat="tab in a1expTabList">
+	  <a><b>{{tab}}</b> </a>
+	  </li>
+	</ul>
+	<div class="tab-content">
+		<div id="ehome" class="tab-pane fade in active">
+		<!-- content -->
+		   <textarea ui-codemirror ng-model="code" id="code"></textarea> <br>
+		   <div id="a1eGuidance" ></div>
+		</div>
+	</div>
+</div>

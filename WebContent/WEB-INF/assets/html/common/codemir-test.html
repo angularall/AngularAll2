@@ -1,0 +1,151 @@
+
+<html>
+    <head>
+        <title>AngularAll</title>
+        <link rel="shortcut icon" href="../images/aalogo.png"/>
+        <link  href="bootstrap.css"                    rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"   type="text/javascript"></script>
+        <script src="../js/lib/angular-ui.js"></script>
+		<script src="../js/lib/ui-bootstrap-tpls.js"></script>
+		<script src="../js/lib/codemirror.js"></script>
+		<script src="../js/lib/xml.js"></script>
+		<script src="../js/lib/javascript.js"></script>
+		<script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+        <link rel="stylesheet" href="../css/bootstrap.css"/>
+		<link rel="stylesheet" href="../css/codemirror.css"/>
+		<link rel="stylesheet" href="../css/paraiso-light.css"/>
+
+        <script type="text/javascript">
+            var myApp = angular.module('myApp', ['ui', 'ui.bootstrap']).controller('codeCtrl',codeCtrl);;
+            myApp.value('ui.config',
+                {
+                    codemirror:
+                    {
+                    	mode: 'htmlmixed',
+                        lineNumbers: true,
+                        matchBrackets: true,
+                    }
+                });
+
+            
+            function codeCtrl($scope,$http,$sce)
+            {
+            	$scope.trusturl =$sce.trustAsResourceUrl("test.html");       	
+
+                $http({
+				method : "GET",
+				url : "http://localhost:8080/AngularAll2/mainservlet/test.html"
+			  }).then(function mySucces(response) {
+				  $scope.code = response.data;
+				  
+				}, function myError(response) {
+				  $scope.code = response.statusText;
+			  });
+                
+                $scope.changeIt=function(){
+                	  var myIFrame = document.createElement("iframe");
+                	  myIFrame.setAttribute("frameborder", "0");
+                	  myIFrame.setAttribute("id", "ifResult");
+                	  myIFrame.setAttribute("name", "ifResult");  
+                	  document.getElementById("resultFrame").innerHTML = "";
+                	  document.getElementById("resultFrame").appendChild(myIFrame);
+                	  myIFrame = (myIFrame.contentWindow) ? myIFrame.contentWindow : (myIFrame.contentDocument.document) ? myIFrame.contentDocument.document : myIFrame.contentDocument;
+                	  myIFrame.document.open();
+                	  myIFrame.document.write($scope.code);
+                	  myIFrame.document.close();
+                }
+            }
+        </script>
+    </head>
+    <body ng-app="myApp">
+        <div class="well">
+            <div class="container">
+            	<img src="../images/aalogo.png" class="al-logo-img" onclick="javascript:window.location='http://www.angularall.com';"/>
+                <h3 class="dom" ><a href="http://www.angularall.com">AngularAll.com</a> example</h3>
+            </div>
+        </div>
+        <div ng-controller="codeCtrl">
+            <div class="container-fluid">
+				 <div class="row">
+				 	<div class="text-center"><input type="button" value="Run" ng-click="changeIt()" class="run"></div>
+    				<div class="col-sm-7">
+		               <div class="text-center htxte"> Editor</div>
+		                <textarea ui-codemirror ng-model="code" id="code"></textarea> <br>
+					</div>
+                	<div class="col-sm-5">
+                	<div class="text-center htxt">Result:</div>
+	                <div id="resultFrame">
+						<iframe src="{{trusturl}}" id="ifResult" name="ifResult"></iframe>
+	                </div>
+	                </div>
+            	</div>
+        	</div>
+        </div>
+    </body>
+    <style>
+    	#resultFrame{
+    	padding-top:5px;
+    	border: 1px solid #b1d6f7;
+	    background-color: #fff;
+	    border-radius: 14px;
+    	box-shadow: 0 4px 16px 0 #ccc, 0 0 0 1px rgba(0,0,0,0.08);
+    	transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    	}
+    	#resultFrame #ifResult{
+    	border-width: 0;
+    	border-style: none;
+    	width: 100%;
+    	height: 100%;
+    	}
+    	.CodeMirror {
+    	padding-top:5px;
+    	word-break: break-all;
+  		height: auto;
+    	border: 1px solid #b1d6f7;
+	    background-color: #fff;
+	    border-radius: 14px;
+    	box-shadow: 0 4px 16px 0 #ccc, 0 0 0 1px rgba(0,0,0,0.08);
+    	transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+		}
+		.run{
+		    color: #fff;
+    		background-color: #337ab7;
+    		border-color: #337ab7;
+    		padding: 10px 15px;
+    		border-bottom: 1px solid transparent;
+    		border-top-left-radius: 3px;
+    		border-top-right-radius: 3px;
+    		width:100px
+		}
+		.run:hover{
+		    box-shadow: 0 2px 5px 0 #8496ef, 0 0 0 1px rgba(0,0,0,0.08);
+    		transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+		}
+		.htxte{
+			color:#000;
+			font-size:20px;
+		}
+		.htxt{
+			color:#337ab7;
+			font-size:20px;
+		}
+		.al-logo-img{
+			height: 60px;
+    		width: 140px;
+    		padding-top: 5px;
+			
+		}
+		.well{
+		    padding: 5px 15px 10px 44px;
+		}
+		.dom{
+			line-height:0.3;		
+		}
+		.dom a{
+			color:#000;
+		}
+		.dom a:hover{
+			color:#337ab7;
+		}
+    </style>
+</html>

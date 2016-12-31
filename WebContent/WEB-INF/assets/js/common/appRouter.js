@@ -35,16 +35,31 @@
 				.state(
 						'home.a1example',
 						{
-							url : '/angularstarting/:name',
+							url : '/exmaple/:name',
 							views:{
 								"a1example":{
 									templateUrl :function($stateParams){
-										return getTemplateUrl($stateParams.name);
+										return getTemplateUrl('a1exmpmenu');
 									},
-									//controller : 'artMDateController',
+									controller :'A1ExampleCodeCtrl',
 								},
 								"a1theme@home":{
 									template:" ",
+								}
+							}
+						})
+						.state('home.a1example.tab',{
+							url:"/tab/:tname",
+							views:{
+								"examptabcontent":{
+									template:"<textarea ui-codemirror ng-model='code' id='code'></textarea> <br> <div id='a1eGuidance' ng-model='guide'></div>",
+										
+										/*function($stateParams)
+												{
+													console.log($stateParams.name);
+													return getTemplateUrl($stateParams.name);
+												},*/
+									//controller : 'A1CmpItemDetailTab as a1citctrl',
 								}
 							}
 						});

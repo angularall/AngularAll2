@@ -1,0 +1,52 @@
+<div class="a1example-cont">
+<div class="text-center"><h4>Example-8: Display complex objects in table by using ng-repeat directive(usage of <b>ng-repeat</b>)</h4></div>
+
+<ul class="nav nav-tabs">
+  <li ui-sref-active="active" ui-sref="" ng-repeat="tab in e1TabList">
+  <a><b>{{tab}}</b></a>
+  </li>
+</ul>
+<div class="tab-content"><div id="home" class="tab-pane fade in active" ui-view="tabcontent"></div>
+
+<pre>
+<xmp>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script> <!-- Step-1 -->
+		<script>
+			angular.module('myApp', []); <!--Step-2 -->
+			angular.module('myApp').controller('mobileController',function($scope){ <!-- Step-3 -->
+				$scope.mobileData = [{'brand':'Apple','price':'800','model':'7s'},
+				                     {'brand':'Samsung','price':'650','model':'SJ4'},
+				                     {'brand':'Blackberry','price':'750','model':'Dtek'}];
+			});
+		</script>
+	</head>
+	<body ng-app="myApp"><!-- Step-4 -->
+		<div  ng-controller="mobileController"> <!-- Step-5 -->
+			<table>
+      			<tr>
+        			<th>Brand</th>
+        			<th>Price</th>
+        			<th>Model</th>
+      			</tr>
+      				<tr ng-repeat="(index,mobile) in mobileData"><!-- Step-6 -->
+        				<td>{ {mobile.brand}}</td>
+        				<td>{ {mobile.price}}</td>
+        				<td>{ {mobile.model}}</td>
+      				</tr>
+    		</table>
+		</div>
+	</body>
+</html>
+</xmp>
+</pre>
+<h4>Quidance</h4>
+New concepts are below: goto <a>All Steps</a> for complete info  
+<ul class="list-group">
+  <li class="list-group-item al-a1lm-eitem">Complex array or array list objects are manipulated in html by using ng-repat and by using .(dot) notation to fetch data from iterated entity </li>
+  <li class="list-group-item al-a1lm-eitem"><b>ng-repeat with indexing:</b> index of array element can be get by using (index,item) syntax and first param is index and second param is array element</li>
+  <li class="list-group-item al-a1lm-eitem">If we are using ng-repeat="item in list" gives item alone but we can not use ng-repat="(item) in list" to get item</li>
+</ul>
+</div>
+</div>

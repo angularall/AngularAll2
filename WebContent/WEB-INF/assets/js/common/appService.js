@@ -16,7 +16,7 @@ function(){
     		getTabDataList:getTabDataList,
     	};
     	function getA1Cmp(){
-    		var comp=[{'n':'Directive','f':'a1cd'},{'n':'Filter','f':'a1cf'},{'n':'Function','f':'a1cfu'},{'n':'Provider','f':'a1cp'},{'n':'Service','f':'a1cs'},{'n':'Factory','f':'a1cft'},{'n':'Animation','f':'a1ca'},{'n':'Router','f':'a1cr'},{'n':'Router','f':'a1cr'},{'n':'Router','f':'a1cr'},{'n':'Router','f':'a1cr'},{'n':'Router','f':'a1cr'},{'n':'Router','f':'a1cr'},{'n':'Router','f':'a1cr'},{'n':'Router','f':'a1cr'},{'n':'Router','f':'a1cr'},{'n':'Router','f':'a1cr'},{'n':'Router','f':'a1cr'},{'n':'Router','f':'a1cr'},{'n':'Router','f':'a1cr'},{'n':'Router','f':'a1cr'}];
+    		var comp=[{'n':'Directive','f':'a1cd'},{'n':'Filter','f':'a1cf'},{'n':'Function','f':'a1cfu'},{'n':'Provider','f':'a1cp'},{'n':'Service','f':'a1cs'},{'n':'Factory','f':'a1cft'},{'n':'Animation','f':'a1ca'},{'n':'Router','f':'a1cr'}];
     		return comp; 
     	}
     	function getA1CmpDetail(){

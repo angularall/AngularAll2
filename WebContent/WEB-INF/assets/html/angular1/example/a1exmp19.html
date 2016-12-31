@@ -1,0 +1,59 @@
+<div class="a1example-cont">
+<div class="text-center"><h4>Example-19: Date filter in html (usage of <b>|date</b>)</h4></div>
+<ul class="nav nav-tabs">
+  <li ui-sref-active="active" ui-sref="" ng-repeat="tab in e1TabList">
+  <a><b>{{tab}}</b></a>
+  </li>
+</ul>
+<div class="tab-content"><div id="home" class="tab-pane fade in active" ui-view="tabcontent"></div>
+
+<pre>
+<xmp>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script> <!-- Step-1 -->
+		<script>
+			angular.module('myApp', []); <!--Step-2 -->
+			angular.module('myApp').controller('mobileController',function($scope){ <!-- Step-3 -->
+				$scope.mobileData = [{'brand':'Apple','price':'800','model':'7s','reldate':'1282844406873'},
+				                     {'brand':'Samsung','price':'650','model':'SJ4','reldate':'1382853596873'},
+				                     {'brand':'Blackberry','price':'750','model':'Dtek','reldate':'1182953596873'}];
+				$scope.showPrice=true;
+				$scope.myClass="greenbg";
+			});
+		</script>
+		<style>.greenbg{background:green} .bluebg{background:blue} .redbg{background:red} </style>
+	</head>
+	<body ng-app="myApp"><!-- Step-4 -->
+		<div  ng-controller="mobileController"> <!-- Step-5 -->
+			Green:<input type="radio" value="greenbg" ng-model="myClass"/>
+			Blue:<input type="radio" value="bluebg" ng-model="myClass"/>
+			Red:<input type="radio" value="redbg" ng-model="myClass"/>
+			<hr>
+			<table>
+      			<tr ng-class="myClass">
+        			<th><a ng-click="sortHeader='brand'">Brand</a></th>
+        			<th ng-show="showPrice"><a ng-click="sortHeader='price'">Price</a></th>
+        			<th><a ng-click="sortHeader='model'">Model</a></th>
+					<th><a ng-click="sortHeader='reldate'">Release Date</a></th>
+      			</tr>
+      				<tr ng-repeat="(index,mobile) in mobileData|orderBy:sortHeader"><!-- Step-6 -->
+        				<td>{{ mobile.brand}}</td>
+        				<td>{{ mobile.price|currency:'$'}}</td>
+        				<td ng-show="showPrice">{{ mobile.model}}</td>
+						<td>{{ mobile.reldate|date}}</td>
+      				</tr>
+    		</table>
+    		<hr>
+		</div>
+	</body>
+</html>
+</xmp>
+</pre>
+<h4>Quidance</h4>
+New concepts are below: goto <a>All Steps</a> for complete info  
+<ul class="list-group">
+  <li class="list-group-item al-a1lm-eitem"><b>|date</b> filter is used to display in date format</li>
+</ul>
+</div>
+</div>

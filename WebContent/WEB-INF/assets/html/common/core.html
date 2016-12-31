@@ -1,6 +1,7 @@
 <html ng-app="aaApp">
 <head>
 <title>AngularAll</title>
+<link rel="shortcut icon" href="../images/aalogo.png"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../js/lib/angular_156_min.js"></script>
 <script src="../js/lib/angular-ui-router-min.js"></script>
@@ -10,44 +11,52 @@
 <script src="../js/controller/mainController.js"></script>
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/bootstrap.css"/>
+<script src="../js/lib/angular-ui.js"></script>
+<script src="../js/lib/ui-bootstrap-tpls.js"></script>
+<script src="../js/lib/codemirror.js"></script>
+<script src="../js/lib/xml.js"></script>
+<script src="../js/lib/javascript.js"></script>
+<script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+<link rel="stylesheet" href="../css/codemirror.css"/>ss
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top al-nav-head">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" ui-sref="home">AngularAll</a>
-      <img src="../images/aalogo.png" class="al-logo-img"/>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+<div class="container-fluid aal-box-shdw navbar-fixed-top">
+ <a class="navbar-brand" ui-sref="home">AngularAll</a>
+   <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li ng-class="{active: $state.includes('home')}"><a ui-sref="home"></a></li>
+      	<li><img src="../images/aalogo.png" class="al-logo-img"/></li>
+        <li ng-class="{active: $state.includes('home')}" class="hidden"><a ui-sref="home">Fundamental</a></li>
+        <li ng-class="{active: $state.includes('home')}"><a ui-sref="home">Examples</a></li>
         <li class="dropdown" ui-sref-active="active" data-t="{{$state.includes('angular1')}}">
-          <a class="dropdown-toggle" data-toggle="dropdown"  ui-sref="angular1.main">Angular-1<span class="caret"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown"  ui-sref="angular1.main"><b>Angular-1</b><span class="caret"></span></a>
         </li>
-        <li ui-sref-active="active" ><a ui-sref="angular2.all">Angular-2</a>
+        <li ui-sref-active="active" ><a ui-sref="angular2.all"><b>Angular-2</b></a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span>Forum</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Post</a></li>
+        <li><a href="javascript:void(0);"><span class=""></span>Forum</a></li>
+        <li><a href="javascript:void(0);"><span class=""></span>Post</a></li>
       </ul>
-       <p ui-view="hint" class="navbar-text pull-right">Hint</p>
+       <p ui-view="hint" class="navbar-text pull-right hidden">Hint</p>
     </div>
-  </div>
-</nav>
-<div class="al-head-path">Angular-1 > Components > Directive > ng-If > basics</div>
-    <!-- Here is the main ui-view (unnamed) and will be populated by its immediate children's templates
-         unless otherwise explicitly named views are targeted. It's also employing ng-animate. -->
-    <div ui-view="root" class="container-fluid slide core" style="padding-top: 85px;"></div>
-    
+</div>
+<div class="al-head-path" ui-view="pathview">You are in: Angular-1 > Components > Directive > ng-If > basics</div>
+<div ui-view="root" class="container-fluid slide al-core"></div>
+
+       <!--  <div ng-controller="A1ExampleCodeCtrl">
+            <div class="container-fluid">
+				 <div class="row">
+				 	<div class="text-center"><input type="button" value="Run" ng-click="changeIt()" class="run"></div>
+    				<div class="col-sm-7">
+		               <div class="text-center htxte"> Editor</div>
+		                <textarea ui-codemirror ng-model="code" id="code"></textarea> <br>
+					</div>
+            	</div>
+        	</div>
+        </div> -->
+ 
 </body>
 <script type="text/javascript">
 	window.appContx="http://localhost:8080/AngularAll2/";
 </script>
-
 </html>

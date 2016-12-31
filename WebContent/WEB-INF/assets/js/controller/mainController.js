@@ -21,7 +21,7 @@
 	A1ExampleCtrl.$inject=['$scope','dataService'];
 	function A1ExampleCtrl($scope,dataService){
 		$scope.a1Topics=loadA1Topics();
-		$scope.e1TabList=['Example','Html','JavaScript','All Steps','Mistakes','VideoHelp','Editor']
+		$scope.a1expTabList=['Example','Html','JavaScript','All Steps','Mistakes','VideoHelp','Editor']
 	}
 
 	angular.module('aaApp').controller('angular1cmpctrl',angular1cmpctrl);
@@ -85,5 +85,66 @@
 		data=['module','model','bind','expression','controller','filter','directive','function']
 		return data;
 	}
+	
+	
+	
+	
+	
+	
+	
+	angular.module('aaApp.ang1').value('ui.config',
+            {
+                codemirror:
+                {
+                	mode: 'htmlmixed',
+                    lineNumbers: true,
+                    matchBrackets: true,
+                }
+            });
+	
+	 angular.module('aaApp.ang1').controller('A1ExampleCodeCtrl',A1ExampleCodeCtrl);
+	    A1ExampleCodeCtrl.$inject=['$scope','$http','$sce','$state','$stateParams','dataService'];
+	     function A1ExampleCodeCtrl($scope,$http,$sce,$state,$stateParams,dataService)
+	     {
+	     	/*$scope.trusturl =$sce.trustAsResourceUrl("test.html");       	
+
+	         $http({
+				method : "GET",
+				url : "http://localhost:8080/AngularAll2/mainservlet/test.html"
+			  }).then(function mySucces(response) {
+				  $scope.code = response.data;
+				  
+				}, function myError(response) {
+				  $scope.code = response.statusText;
+			  });*/
+	    	 console.log('ctrl'+$stateParams.name);
+	    	 $scope.code="<html><p>hihihi</p></html";
+	    	 loadData();
+	    	 function loadData(){
+	    		 $http({
+	 				method : "GET",
+	 				url : $stateParams.name+'.html'
+	 			  }).then(function mySucces(response) {
+	 				
+	 				 var elem = angular.element(response.data);
+	 				 
+	 				  $scope.code = elem[0].querySelector('#code').innerHTML;
+	 				  //$scope.guide = $sce.trustAsHtml(elem[0].querySelector('#steps'));
+	 				 document.getElementById('a1eGuidance').appendChild(elem[0].querySelector('#steps'));
+	 				
+	 				//$scope.guide=$sce.trustAsHtml($scope.guide);
+	 			    console.log(elem[0].querySelector('#html'));
+	 			   // document.getElementById('a1eGuidance').innerHtml="";
+	 			   //document.getElementById('a1eGuidance').appendChild(elem[2]);
+	 				}, function myError(response) {
+	 				  $scope.code = response.statusText;
+	 			  });
+	    	 }
+	    	 //$state.go('home.a1example.tab',{'tname':'Example'});
+	     }
+	
+	
+	
+	
 })();	
 	

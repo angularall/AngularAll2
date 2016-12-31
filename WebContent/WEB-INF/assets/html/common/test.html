@@ -1,0 +1,25 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="personCtrl">
+{{mobileObject}}
+<ul>
+	<li ng-repeat="country in val|orderBy|filter:'i'">
+		{{country}}
+	</li>
+</ul>
+</div>
+
+<script>
+angular.module('myApp', []).controller('personCtrl', function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+	$scope.val=['USA','China','India','Japan','England','Canada'];
+	$scope.mobileObject={"mobileName":"Apple","price":65000,"model":"6s"}
+	
+});
+</script>
+
+</body>
+</html>

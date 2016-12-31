@@ -1,0 +1,58 @@
+<div class="a1example-cont">
+<div class="text-center"><h4>Example-14:Display amount in currency format(usage of <b>|currency</b>)</h4></div>
+<ul class="nav nav-tabs">
+  <li ui-sref-active="active" ui-sref="" ng-repeat="tab in e1TabList">
+  <a><b>{{tab}}</b></a>
+  </li>
+</ul>
+<div class="tab-content"><div id="home" class="tab-pane fade in active" ui-view="tabcontent"></div>
+
+<pre>
+<xmp>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script> <!-- Step-1 -->
+		<script>
+			angular.module('myApp', []); <!--Step-2 -->
+			angular.module('myApp').controller('mobileController',function($scope){ <!-- Step-3 -->
+				$scope.mobileData = [{'brand':'Apple','price':'800','model':'7s'},
+				                     {'brand':'Samsung','price':'650','model':'SJ4'},
+				                     {'brand':'Blackberry','price':'750','model':'Dtek'}];
+				$scope.sortHeader='brand';
+				$scope.search={};
+			});
+		</script>
+	</head>
+	<body ng-app="myApp"><!-- Step-4 -->
+		<div  ng-controller="mobileController"> <!-- Step-5 -->
+			<h4>Search in Name:<input type="text" ng-model="search.brand"/></h4>
+			<h4>Search in price:<input type="text" ng-model="search.price"/></h4>
+			<h4>Search in model:<input type="text" ng-model="search.model"/></h4>
+			<h4>Search in ALL :<input type="text" ng-model="search.$"/></h4>
+			<hr>
+			<table>
+      			<tr>
+        			<th><a ng-click="sortHeader='brand'">Brand</a></th>
+        			<th><a ng-click="sortHeader='price'">Price</a></th>
+        			<th><a ng-click="sortHeader='model'">Model</a></th>
+      			</tr>
+      				<tr ng-repeat="(index,mobile) in mobileData|orderBy:sortHeader|filter:search"><!-- Step-6 -->
+        				<td>{{mobile.brand}}</td>
+        				<td>{{mobile.price|currency:'$'}}</td>
+        				<td>{{mobile.model}}</td>
+      				</tr>
+    		</table>
+    		<hr>
+		</div>
+	</body>
+</html>
+</xmp>
+</pre>
+<h4>Quidance</h4>
+New concepts are below: goto <a>All Steps</a> for complete info  
+<ul class="list-group">
+  <li class="list-group-item al-a1lm-eitem"><b>|currency</b> filter is used for display amounts in currency format in default</li>
+  <li class="list-group-item al-a1lm-eitem"><b>|currency:symbol</b> will provide the currency symbol.</li>
+</ul>
+</div>
+</div>
